@@ -16,7 +16,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   validates :username, :email, :password_digest, :session_token, :user_image_url, presence: true
-  validates :password, length [minimum: 6, allow_nil: true]
+  validates :password, length {minimum: 6, allow_nil: true}
 
 
   after_initialize :ensure_session_token, :ensure_user_image_url
