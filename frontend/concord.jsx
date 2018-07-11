@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let store;
 
   if (window.current_user){
-    debugger
     const preloadedState = {
       ui: {
         currentUserId: window.current_user.id

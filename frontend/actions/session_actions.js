@@ -20,7 +20,6 @@ export const receiveErrors = errors => ({
 });
 
 export const createUser = (user) => {
-  debugger
   return (dispatch) => {
     return UsersAPIUtil.createUser(user).then((user) => {
       return dispatch(receiveCurrentUser(user)),

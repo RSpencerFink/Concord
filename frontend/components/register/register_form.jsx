@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default class RegisterForm extends React.Component {
 
@@ -47,6 +48,7 @@ export default class RegisterForm extends React.Component {
         </label>
 
         <button>Continue</button>
+        <Link to="/login">Already have an account?</Link>
       </form>
     )
   };

@@ -5,6 +5,7 @@ class Api::SessionsController < ApplicationController
      params[:user][:email],
      params[:user][:password]
    )
+
    if @user
      log_in(@user)
      render '/api/users/show'
@@ -15,7 +16,7 @@ class Api::SessionsController < ApplicationController
 
  def destroy
    log_out
-   redirect_to new_api_session_url
+   render json: {}
  end
 
 end

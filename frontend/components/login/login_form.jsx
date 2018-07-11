@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default class LoginForm extends React.Component {
 
@@ -25,9 +26,15 @@ export default class LoginForm extends React.Component {
     this.props.action(user);
   };
 
+  handleSubmitTester(e) {
+    e.preventDefault();
+    const testuser = {email: "test@test.com", password: "password"}
+    this.props.action(testuser);
+  };
+
   render () {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit.bind(this)}>
         <h1>Welcome back!</h1>
         <h3>We're excited to see you again!</h3>
         <label>Email
@@ -39,6 +46,9 @@ export default class LoginForm extends React.Component {
         </label>
 
         <button>Login</button>
+        <p>Need an account?</p>
+        <Link to="/register">Register</Link>
+        <button onClick={this.handleSubmitTester.bind(this)}>Demo User</button>
       </form>
     )
   };
