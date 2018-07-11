@@ -33,7 +33,7 @@ export default class RegisterForm extends React.Component {
 
   render () {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit.bind(this)}>
         <h1>Create an account</h1>
         <label>Email
         <input type="text" value={this.state.email} onChange={this.updateEmail.bind(this)}/>

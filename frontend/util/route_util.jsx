@@ -26,8 +26,8 @@ const Protected = function({ component: Component, path, loggedIn, exact }) {
 };
 
 const mapStateToProps = state => {
-  return {loggedIn: Boolean(state.currentUserId)};
+  return {loggedIn: Boolean(state.ui.currentUserId)};
 };
 
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
-export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Auth));
+export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protected));

@@ -11,8 +11,8 @@ export default class Home extends React.Component {
     return (
       <div>
         <h1>CONCORD</h1>
-        {currentUser.username}
-        {currentUser.email}
+        <p>Username: {currentUser.username}</p>
+        <p>Email: {currentUser.email}</p>
         <button onClick={this.props.logout}>Log Out</button>
       </div>
     )
