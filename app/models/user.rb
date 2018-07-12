@@ -51,6 +51,6 @@ class User < ApplicationRecord
   end
 
   def ensure_user_image_url
-    self.user_image_url ||= "defaultURL"
+    self.user_image_url ||= "placeholder_user.png"
   end
 end

@@ -1,0 +1,51 @@
+.login, .register {
+  background-image: image_url("login-background.jpg");
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #00000021;
+  background-blend-mode: color;
+}
+
+div.need-account {
+  font-family: 'Whitney-Book';
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.login-link {
+  text-decoration: none;
+  color: #7289DA;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.register-link-container {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.register-link {
+  text-decoration: none;
+  color: #7289DA;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-logo {
+  left: 50%;
+  margin-left: -130px;
+  position: absolute;
+  top: 40px;
+  width: 260px;
+}

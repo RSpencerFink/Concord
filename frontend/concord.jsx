@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = sessions.login;
   window.logout = sessions.logout;
   window.fetchUsers = fetchUsers;
-  console.log(window.concordLogoWhite);
   //
 
   const root = document.getElementById('root');
