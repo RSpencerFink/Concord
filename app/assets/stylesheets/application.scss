@@ -16,15 +16,15 @@
 
 @font-face {
   font-family: 'Whitney-Light';
-  src: url('WhitneyHTF-Light.otf') format('opentype');
+  src: font_url('WhitneyHTF-Light.otf') format('opentype');
 }
 @font-face {
   font-family: 'Whitney-SemiBold';
-  src: url('WhitneyHTF-SemiBold.otf') format('opentype');
+  src: font_url('WhitneyHTF-SemiBold.otf') format('opentype');
 }
 @font-face {
   font-family: 'Whitney-Book';
-  src: url('WhitneyHTF-Book.otf') format('opentype');
+  src: font_url('WhitneyHTF-Book.otf') format('opentype');
 }
 
 html {
