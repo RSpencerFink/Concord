@@ -34,22 +34,29 @@ export default class LoginForm extends React.Component {
 
   render () {
     return (
-      <form className="login" onSubmit={this.handleSubmit.bind(this)}>
-        <h1 className="login-title">Welcome back!</h1>
-        <h3 className="login-title">We're excited to see you again!</h3>
-        <label classname="login-label">Email
-        <input type="text" value={this.state.email} onChange={this.updateEmail.bind(this)}/>
-        </label>
+      <div className="login">
+        <div className="login-logo">
+          <img src={concordLogoWhite} width="260"></img>
+        </div>
+        <form className="login-form" onSubmit={this.handleSubmit.bind(this)}>
+          <h1 className="login-title">Welcome back!</h1>
+          <h3 className="login-title">We're so excited to see you again!</h3>
+          <h5>EMAIL</h5>
+          <input type="text" value={this.state.email} onChange={this.updateEmail.bind(this)}/>
 
-        <label classname="login-label"> Password
-        <input type="password" value={this.state.password} onChange={this.updatePassword.bind(this)}/>
-        </label>
 
-        <button className="login-button">Login</button>
-        <p className="login-text">Need an account?</p>
-        <Link className="login-link" to="/register">Register</Link>
-        <button className="login-button" onClick={this.handleSubmitTester.bind(this)}>Demo User</button>
-      </form>
+          <h5>PASSWORD</h5>
+          <input type="password" value={this.state.password} onChange={this.updatePassword.bind(this)}/>
+
+
+          <button className="login-button">Login</button>
+          <div className="need-account">
+            <span className="login-text">Need an account? </span>
+            <Link className="login-link" to="/register">Register</Link>
+          </div>
+          <button className="login-button" onClick={this.handleSubmitTester.bind(this)}>Demo User</button>
+        </form>
+      </div>
     )
   };
 };

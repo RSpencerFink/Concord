@@ -3,4 +3,7 @@
 window.current_user = <%= render('/api/users/user.json.jbuilder', {user: current_user}).html_safe %>
 </script>
 <% end %>
+<script type="text/javascript">
+  window.concordLogoWhite = "<%= image_url('concord_logo_white.png') %>"
+</script>
 <main id="root"></main>
