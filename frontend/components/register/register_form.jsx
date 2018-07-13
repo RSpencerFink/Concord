@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class RegisterForm extends React.Component {
 
@@ -10,8 +10,8 @@ export default class RegisterForm extends React.Component {
       email: "",
       username: "",
       password: ""
-    }
-  };
+    };
+  }
 
   updateEmail (e) {
     this.setState({email: e.target.value});
@@ -29,7 +29,7 @@ export default class RegisterForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.action(user);
-  };
+  }
 
   render () {
     return (
@@ -57,6 +57,6 @@ export default class RegisterForm extends React.Component {
           </form>
         </div>
       </div>
-    )
-  };
-};
+    );
+  }
+}

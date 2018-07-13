@@ -1,14 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Home from './home'
-import { fetchUsers } from '../../actions/user_actions'
-import { fetchServers } from '../../actions/server_actions'
-
-const mapStateToProps = (state) => {
-  return {
-
-  };
-};
+import Home from './home';
+import { fetchUsers } from '../../actions/user_actions';
+import { fetchServers } from '../../actions/server_actions';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -17,4 +11,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(null, mapDispatchToProps)(Home);

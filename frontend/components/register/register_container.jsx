@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import RegisterForm from './register_form';
-import { createUser } from '../../actions/session_actions'
+import { createUser } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
   return {

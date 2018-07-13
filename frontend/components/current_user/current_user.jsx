@@ -1,14 +1,14 @@
-import React from 'react'
+import React from 'react';
 
 export default class CurrentUser extends React.Component {
 
   constructor(props){
     super(props);
-    this.currentUser = this.props.users[this.props.currentUserId]
+    this.currentUser = this.props.users[this.props.currentUserId];
   }
 
   componentDidMount() {
-    this.props.fetchUsers()
+    this.props.fetchUsers();
   }
 
   render () {
@@ -26,6 +26,6 @@ export default class CurrentUser extends React.Component {
           <img className="logout-icon" src={logOutIcon} height="16px" width="auto" onClick={this.props.logout} />
         </div>
       </div>
-    )
-  };
-};
+    );
+  }
+}

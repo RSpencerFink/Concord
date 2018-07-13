@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CurrentUser from './current_user';
-import { logout } from '../../actions/session_actions'
-import { fetchUser, fetchUsers } from '../../actions/user_actions'
+import { logout } from '../../actions/session_actions';
+import { fetchUser, fetchUsers } from '../../actions/user_actions';
 
 const mapStateToProps = (state) => {
   return {

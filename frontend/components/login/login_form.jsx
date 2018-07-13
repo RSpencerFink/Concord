@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class LoginForm extends React.Component {
 
@@ -9,11 +9,11 @@ export default class LoginForm extends React.Component {
     this.state = {
       email: "",
       password: ""
-    }
-  };
+    };
+  }
 
   componentDidMount(){
-    this.props.fetchUsers()
+    // this.props.fetchUsers();
   }
 
   updateEmail (e) {
@@ -28,13 +28,13 @@ export default class LoginForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.action(user);
-  };
+  }
 
   handleSubmitTester(e) {
     e.preventDefault();
-    const testuser = {email: "Test@Testing.com", password: "password"}
+    const testuser = {email: "Test@Testing.com", password: "password"};
     this.props.action(testuser);
-  };
+  }
 
   render () {
     return (
@@ -63,6 +63,6 @@ export default class LoginForm extends React.Component {
           </form>
         </div>
       </div>
-    )
-  };
-};
+    );
+  }
+}

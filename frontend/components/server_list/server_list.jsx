@@ -1,5 +1,5 @@
 import React from 'react';
-import ServerListItem from './server_list_container';
+import ServerListItem from './server_list_item';
 
 export default class ServerList extends React.Component {
   constructor(props){
@@ -13,14 +13,15 @@ export default class ServerList extends React.Component {
 
   render() {
     const serverListItems = this.props.servers.map((server) => {
-      return (<ServerListItem key={ server.id } server={ server } />)
+      return (<ServerListItem key={ server.id } server={ server } />);
     });
     return (
       <div className="server-list-container">
-        <ul>
+        <h5>Server List</h5>
+        <ul className="server-list">
           { serverListItems }
         </ul>
       </div>
     );
-  };
-};
+  }
+}
