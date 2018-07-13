@@ -4,7 +4,9 @@ import configureStore from './store/store'
 import Root from './components/root'
 import * as sessions from './util/session_api_util';
 import * as users from './util/users_api_util';
-import fetchUsers from './actions/user_actions'
+import * as servers from './util/server_api_util';
+import fetchUsers from './actions/user_actions';
+import fetchServers from './actions/server_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -31,6 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = sessions.login;
   window.logout = sessions.logout;
   window.fetchUsers = fetchUsers;
+  window.fetchServers = fetchServers;
+  window.createServer = servers.createServer;
   //
 
   const root = document.getElementById('root');

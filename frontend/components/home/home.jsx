@@ -1,31 +1,18 @@
-import React from 'react'
+import React from 'react';
+import CurrentUserContainer from '../current_user/current_user_container'
+import ServerListContainer from '../server_list/server_list_container'
 
 export default class Home extends React.Component {
-
-  constructor(props){
-    super(props);
-    this.currentUser = this.props.users[this.props.currentUserId]
-  }
-
   componentDidMount() {
-    this.props.fetchUsers()
+    this.props.fetchUsers();
+    this.props.fetchServers();
   }
-
-  render () {
+  render(){
     return (
-      <div className="current-user" >
-        <div className="current-user-data">
-          <div className="current-user-portrait">
-          </div>
-          <div className="current-user-info">
-            <span className="current-user-username">{this.currentUser.username}</span>
-            <span className="current-user-email">{this.currentUser.email}</span>
-          </div>
-        </div>
-        <div className="logout-button">
-          <img className="logout-icon" src={logOutIcon} height="16px" width="auto" onClick={this.props.logout} />
-        </div>
+      <div className="main-page">
+        <ServerListContainer />
+        <CurrentUserContainer />
       </div>
     )
-  };
-};
+  }
+}

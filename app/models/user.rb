@@ -21,6 +21,19 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token, :ensure_user_image_url
 
+  has_many :owned_servers,
+  foreign_key: :server_owner_id,
+  class_name: :Server,
+  dependent: :destroy
+
+  has_many :server_memberships,
+  foreign_key: :user_id,
+  class_name: :ServerMembership
+
+  has_many :servers,
+  through: :server_memberships,
+  source: :server
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64
   end

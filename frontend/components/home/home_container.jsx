@@ -1,21 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Home from './home';
-import { logout } from '../../actions/session_actions'
-import { fetchUser, fetchUsers } from '../../actions/user_actions'
+import Home from './home'
+import { fetchUsers } from '../../actions/user_actions'
+import { fetchServers } from '../../actions/server_actions'
 
 const mapStateToProps = (state) => {
   return {
-    currentUserId: state.ui.currentUserId,
-    users: state.entities.users
+
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logout: () => dispatch(logout()),
     fetchUsers: () => dispatch(fetchUsers()),
-    fetchUser: (id) => dispatch(fetchUser(id)),
+    fetchServers: () => dispatch(fetchServers())
   };
 };
 

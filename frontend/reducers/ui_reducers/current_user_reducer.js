@@ -1,10 +1,10 @@
 import {
   RECEIVE_CURRENT_USER,
   LOGOUT_CURRENT_USER,
-} from '../actions/session_actions';
+} from '../../actions/session_actions';
 
 
-const sessionReducer = (state = null, action) => {
+const currentUserReducer = (state = null, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
@@ -16,4 +16,4 @@ const sessionReducer = (state = null, action) => {
   }
 };
 
-export default sessionReducer;
+export default currentUserReducer;
