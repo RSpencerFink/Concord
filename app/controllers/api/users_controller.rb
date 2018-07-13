@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(params[:id]).includes(:servers)
+    @user = User.find_by(params[:id]).includes(:server_ids, :owned_server_ids)
     render '/api/users/show'
   end
 

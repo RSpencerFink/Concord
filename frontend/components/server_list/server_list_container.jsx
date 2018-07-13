@@ -6,7 +6,7 @@ const mapStateToProps = (state) => {
   return {
     users: state.entities.users,
     currentUserId: state.ui.currentUserId,
-    servers: state.entities.servers
+    servers: Object.values(state.entities.servers)
   };
 };
 
