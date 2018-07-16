@@ -38,7 +38,7 @@ export default class RegisterForm extends React.Component {
           <div className="login-logo">
             <img src={concordLogoWhite} width="260"></img>
           </div>
-          <form onSubmit={this.handleSubmit.bind(this)}>
+          <form className="login-form" onSubmit={this.handleSubmit.bind(this)}>
             <h1>Create an account</h1>
             <h5>EMAIL</h5>
             <input type="text" value={this.state.email} onChange={this.updateEmail.bind(this)}/>

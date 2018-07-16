@@ -12,9 +12,14 @@ export default class JoinServer extends React.Component {
     this.setState({server_name: e.target.value});
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createServer(this.state).then(this.props.closeModal);
+  }
+
   render() {
     return (
-      <div className="create-server-options-container">
+      <form className="create-server-options-container" onSubmit={() => this.handleSubmit}>
         <h2 className="join-heading">JOIN A SERVER</h2>
         <h3 className="create-join-subheading">Enter a server name to join an existing server.</h3>
         <div className="create-join-input-container">
@@ -25,7 +30,7 @@ export default class JoinServer extends React.Component {
           <button className="back-button" onClick={() => this.props.openModal('AddServer')}><img className="back-arrow" src={backArrow}/>BACK</button>
           <button className="join-server-button">Join</button>
         </div>
-      </div>
+      </form>
     )
   }
 }

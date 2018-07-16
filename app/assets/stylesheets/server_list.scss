@@ -27,7 +27,7 @@
   margin-top: 8px;
   background-image: image_url("discord_square_green.png");
   background-size: cover;
-  height: 50px;
+  min-height: 50px;
   width: 50px;
   background-size: 100% 100%;
   cursor: pointer;
@@ -45,7 +45,7 @@
   margin-top: 8px;
   background-image: image_url("discord_square.jpg");
   background-size: cover;
-  height: 50px;
+  min-height: 50px;
   width: 50px;
   background-size: 100% 100%;
   cursor: pointer;
@@ -81,12 +81,13 @@
   color: #535559;
   font-size: 40px;
   font-weight: 300;
-  height: 50px;
+  min-height: 50px;
   line-height: 100%;
   padding: 0;
   text-align: center;
   transition: border-color .25s ease,color .25s ease;
   width: 50px;
+  margin-bottom: 40px;
   font-family: 'Whitney-Light'
 }
 
@@ -253,6 +254,7 @@
 
 .create-server-button > button {
   margin-left: 20px;
+  width: 46px;
   padding: 10px 20px;
 }
 
@@ -279,7 +281,7 @@
 
 .list-separator {
   background: #2f3136;
-  height: 2px;
+  min-height: 2px;
   margin-top: 8px;
   top: 0;
   width: 50px;
