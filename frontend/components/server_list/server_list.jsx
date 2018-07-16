@@ -22,7 +22,9 @@ export default class ServerList extends React.Component {
         <ul className="server-list">
           <Link to="/" className="home-button">
           </Link>
+          <div className="list-separator"></div>
           { serverListItems }
+          <div className="list-separator"></div>
           <button className="add-server-button" onClick={() => this.props.openModal('AddServer')}>
             <span>+</span>
           </button>
