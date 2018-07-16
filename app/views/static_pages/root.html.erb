@@ -9,4 +9,13 @@ window.current_user = <%= render('/api/users/user.json.jbuilder', {user: current
 <script type="text/javascript">
   window.logOutIcon = "<%= image_url('sign-out-white-64px.png') %>"
 </script>
+<script type="text/javascript">
+  window.createServerIcon = "<%= image_url('create_server.png') %>"
+</script>
+<script type="text/javascript">
+  window.joinServerIcon = "<%= image_url('join_server.png') %>"
+</script>
+<script type="text/javascript">
+  window.backArrow = "<%= image_url('back_arrow.svg') %>"
+</script>
 <main id="root"></main>

@@ -14,6 +14,8 @@
 class Server < ApplicationRecord
   validates :server_name, :server_owner_id, :server_image_url, presence: true
 
+  after_initialize :ensure_server_image_url
+
   belongs_to :server_owner,
   foreign_key: :server_owner_id,
   class_name: :User
@@ -27,4 +29,8 @@ class Server < ApplicationRecord
   through: :memberships,
   source: :user
 
+  private
+  def ensure_server_image_url
+    self.server_image_url ||= "placeholder_server.png"
+  end
 end

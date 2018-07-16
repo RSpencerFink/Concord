@@ -1,0 +1,286 @@
+.main-page {
+  display: flex;
+  flex-direction: row;
+}
+.server-list-container {
+  background-color: #202225;
+  padding: 10px 5px 10px 5px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  width: 70px;
+  height: 100vh;
+  align-items: center;
+}
+
+.server-list {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.server-list-item {
+  border-radius: 100%;
+  margin-top: 8px;
+  background-image: image_url("discord_square_green.png");
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+  background-size: 100% 100%;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  // transition-duration: .25s;
+}
+
+.server-list-item:hover {
+  border-radius: 15px;
+}
+
+.home-button {
+  border-radius: 100%;
+  margin-top: 8px;
+  background-image: image_url("discord_square.jpg");
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+  background-size: 100% 100%;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  // transition-duration: .25s;
+}
+
+.home-button:hover {
+  border-radius: 15px;
+}
+
+.server-name {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  /*opacity: 0;*/
+  display: none; /* comment this out for CSS hover */
+  background-color: #333;
+  /*transition: all 0.5s ease;*/
+}
+
+.server-name:hover {
+  position: absolute;
+  z-index: top;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  background-color: #333;
+  /*transition: all 0.5s ease;*/
+}
+
+.add-server-button {
+  background: #202225;
+  border: 1px dashed #535559;
+  border-radius: 50%;
+  color: #535559;
+  font-size: 40px;
+  font-weight: 300;
+  height: 50px;
+  line-height: 100%;
+  padding: 0;
+  text-align: center;
+  transition: border-color .25s ease,color .25s ease;
+  width: 50px;
+  font-family: 'Whitney-Light'
+}
+
+.add-server-button:hover {
+  border: 1px dashed #fff;
+  color: #fff;
+  background: #202225;
+
+}
+
+.create-server-options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 520px;
+  height: 420px;
+  padding: 30px 24px;
+  border-radius: 5px;
+}
+
+.create-server-options {
+  display: flex;
+  flex-direction: row;
+}
+.add-server-title {
+  margin-top: 8px;
+  margin-bottom: 40px;
+  font-family: 'Whitney-SemiBold';
+  color: #7289DA;
+  font-size: 18px;
+}
+
+.join-server, .create-server {
+  background: hsla(0,0%,100%,.75);
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.08);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+  width: 228px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.join-server > h2 {
+  color: #3ca374;
+  font-size: 18px;
+  margin-top: 20px;
+  font-family: 'Whitney-SemiBold'
+}
+
+.join-server > button {
+  background-color: #3ca374;
+}
+
+.join-server > button:hover {
+  background-color: #2d865d;
+}
+
+.create-server > h2 {
+  color: #7289DA;
+  font-size: 18px;
+  margin-top: 20px;
+  font-family: 'Whitney-SemiBold'
+}
+
+.join-server > span, .create-server > span {
+  margin-top: 16px;
+}
+
+.create-server-image {
+  margin: 26px 0px;
+  height: 76px;
+  width: auto;
+}
+
+.join-server {
+  margin-left: 10px;
+}
+
+.create-join-heading {
+  color: #7289da;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  font-family: 'Whitney-SemiBold';
+}
+
+.create-join-subheading {
+  color: #99aab5;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.create-server-options-container > h5 {
+  color: #87909c;
+}
+
+.create-join-input-container {
+  width: 100%;
+}
+
+.create-join-input-container > h5 {
+  color: #87909c;
+}
+
+.create-join-input-container > input {
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
+  color: #2f3136;
+  background-color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 1px;
+  resize: none;
+  width: 100%;
+}
+
+.create-join-buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.back-button {
+  color: #99aab5;
+  font-size: 12px;
+  background-color: #f9f9f9;
+  border-bottom: 2px solid #f9f9f9;
+  color: #949494;
+  padding: 10px 0 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 0px;
+  width: 46px;
+}
+
+.back-arrow {
+  width: 18px;
+  height: 12px;
+  margin-right: 10px;
+}
+
+.back-button:hover {
+  background-color: #fff;
+  border-bottom: 2px solid #87909c;
+}
+
+.create-server-button > button {
+  margin-left: 20px;
+  padding: 10px 20px;
+}
+
+.join-heading {
+  color: #43b581;
+  font-family: 'Whitney-SemiBold';
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.join-server-button {
+  background-color: #43b581;
+}
+
+.create-join-input-container > p {
+  color: #99aab5;
+  font-weight: 400;
+  margin-top: 4px;
+  display: block;
+  font-size: 11px;
+}

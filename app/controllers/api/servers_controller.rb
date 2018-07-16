@@ -9,14 +9,16 @@ class Api::ServersController < ApplicationController
   def create
     @server = current_user.owned_servers.new(server_params)
     if @server.save
-      render '/api/servers/show'
+      debugger
+      ServerMembership.create(user_id: current_user.id, server_id: @server.id)
+      render '/api/servers/index'
     else
       render json: @server.errors.full_messages, status: 422
     end
   end
 
   def index
-    @servers = Server.all
+    @servers = current_user.servers
   end
 
   def show

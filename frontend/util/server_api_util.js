@@ -27,3 +27,11 @@ export const updateServer = (server) => {
     data: { server }
   });
 };
+
+// export const joinServer = (server_id, user_id) => {
+//   return $.ajax({
+//     method: 'POST',
+//     url: `api/servermemberships`,
+//     data: {server_id}
+//   });
+// };

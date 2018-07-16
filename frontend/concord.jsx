@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import configureStore from './store/store'
-import Root from './components/root'
+import configureStore from './store/store';
+import Root from './components/root';
 import * as sessions from './util/session_api_util';
 import * as users from './util/users_api_util';
 import * as servers from './util/server_api_util';

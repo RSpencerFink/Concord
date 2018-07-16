@@ -1,5 +1,7 @@
 import React from 'react';
 import ServerListItem from './server_list_item';
+import { Link } from 'react-router-dom';
+import AddServer from './add_server'
 
 export default class ServerList extends React.Component {
   constructor(props){
@@ -17,9 +19,13 @@ export default class ServerList extends React.Component {
     });
     return (
       <div className="server-list-container">
-        <h5>Server List</h5>
         <ul className="server-list">
+          <Link to="/" className="home-button">
+          </Link>
           { serverListItems }
+          <button className="add-server-button" onClick={() => this.props.openModal('AddServer')}>
+            <span>+</span>
+          </button>
         </ul>
       </div>
     );
