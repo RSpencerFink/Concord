@@ -28,10 +28,9 @@ export const updateServer = (server) => {
   });
 };
 
-// export const joinServer = (server_id, user_id) => {
-//   return $.ajax({
-//     method: 'POST',
-//     url: `api/servermemberships`,
-//     data: {server_id}
-//   });
-// };
+export const joinServer = () => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/server_memberships`,
+  });
+};

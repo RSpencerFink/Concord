@@ -105,7 +105,19 @@ input:focus {
   border-width: 1px;
   outline: none;
   border-style: solid;
+}
 
+textarea:hover {
+  border-color: #040405;
+  border-width: 1px;
+  border-style: solid;
+}
+
+textarea:focus {
+  border-color: #7289DA;
+  border-width: 1px;
+  outline: none;
+  border-style: solid;
 }
 
 button {

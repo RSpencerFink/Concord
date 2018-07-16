@@ -7,8 +7,8 @@ export default class ServerList extends React.Component {
   constructor(props){
     super(props);
     this.currentUser = props.users[props.currentUserId];
-    this.currentUserServers = [];
   }
+
   componentDidMount() {
     this.props.fetchServers();
   }
