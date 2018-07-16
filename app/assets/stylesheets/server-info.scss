@@ -1,0 +1,36 @@
+.current-server-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  width: 212px;
+  padding: 0 12px 0 16px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.2), 0 2px 0 rgba(0,0,0,.06);
+  color: #fff;
+  transition: background-color .15s ease;
+  background-color: #2C2F33;
+  border-bottom: 1px solid #202225;
+}
+
+.current-server-info > span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  line-height: 48px;
+  overflow: hidden;
+  font-family: 'Whitney-SemiBold';
+}
+
+.current-server-info:hover {
+  background-color: #202225;
+  cursor: pointer;
+}
+
+.expand-arrow {
+  width: auto;
+  height: 14px;
+  opacity: .5;
+}

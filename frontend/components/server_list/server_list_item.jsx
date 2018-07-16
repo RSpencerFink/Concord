@@ -19,7 +19,7 @@ export default class ServerListItem extends React.Component {
 
   render() {
     return (
-      <div onMouseOver={this.handleName} onMouseLeave={this.unHover} className="server-list-item">
+      <div onMouseOver={this.handleName} onMouseLeave={this.unHover} className="server-list-item" onClick={}>
         <span className={this.state.className}>{this.props.server.server_name}</span>
       </div>
 
