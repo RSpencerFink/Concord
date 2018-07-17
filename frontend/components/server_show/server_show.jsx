@@ -10,10 +10,9 @@ export default class ServerShow extends React.Component {
   }
 
   render(){
-    debugger
     return (
       <div>
-        <div className="server-user-info">
+        <div className="server-user-info-column">
           <CurrentServerInfoContainer />
           <CurrentUserContainer />
         </div>

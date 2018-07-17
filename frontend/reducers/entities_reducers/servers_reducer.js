@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_SERVERS, RECEIVE_SERVER } from '../../actions/server_actions';
+import { RECEIVE_ALL_SERVERS, RECEIVE_SERVER, REMOVE_SERVER } from '../../actions/server_actions';
 import { merge } from 'lodash';
 
  const serversReducer = (state = {}, action) => {
@@ -9,6 +9,9 @@ import { merge } from 'lodash';
       return action.servers;
     case RECEIVE_SERVER:
       return merge(oldState, action.server);
+    case REMOVE_SERVER:
+      delete oldState[action.serverId];
+      return oldState;
     default:
       return oldState;
   }

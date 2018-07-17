@@ -1,0 +1,57 @@
+.home-page-user-col{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.user-show-container {
+  min-height: 1px;
+  overflow-y: scroll;
+  width: 100%;
+  background-color: #2F3136;
+  height: 100%;
+}
+
+.user-list-item {
+  display: flex;
+  flex-direction: row;
+  padding-right: 5px;
+  text-overflow: ellipsis;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  margin: 1px 8px 1px 8px;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-list-item:hover{
+  background-color: #41454C;
+}
+
+.friend-list-username {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 15px;
+  color: #f6f6f7;
+  opacity: .3;
+  line-height: 20px;
+  font-family: 'Whitney-SemiBold';
+}
+
+.friend-portrait {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  background-image: image_url("placeholder_user.png");
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.user-list-title {
+  text-align: center;
+  color: #f6f6f7;
+  opacity: .3;
+}

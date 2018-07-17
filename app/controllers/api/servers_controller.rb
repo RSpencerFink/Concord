@@ -1,6 +1,6 @@
 class Api::ServersController < ApplicationController
   before_action :require_login
-  before_action :require_ownership, only: [:edit, :update]
+  before_action :require_ownership, only: [:edit, :update, :destroy]
 
   def new
     @server = Server.new
@@ -21,19 +21,29 @@ class Api::ServersController < ApplicationController
   end
 
   def show
-    @server = Server.find_by(params[:id])
+    @server = Server.find(params[:id])
   end
 
   def edit
-    @server = Server.find_by(params[:id])
+    @server = Server.find(params[:id])
   end
 
   def update
-    @server = Server.find_by(params[:id])
+    @server = Server.find(params[:id])
     if @server.update(server_params)
       render '/api/servers/show'
     else
       render json: @server.errors.full_messages, status: 422
+    end
+  end
+
+  def destroy
+    @server = Server.find(params[:id])
+    if @server
+      @server.destroy
+      render json: {}
+    else
+      render json: ['Unable to Delete Server'], status: 422
     end
   end
 

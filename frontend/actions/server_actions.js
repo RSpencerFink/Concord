@@ -2,6 +2,7 @@ import * as ServerAPIUtil from '../util/server_api_util'
 
 export const RECEIVE_ALL_SERVERS = "RECEIVE_ALL_SERVERS";
 export const RECEIVE_SERVER = "RECEIVE_SERVER";
+export const REMOVE_SERVER = "REMOVE_SERVER";
 
 const receiveAllServers = (servers) => {
   return {
@@ -15,6 +16,13 @@ const receiveServer = (server) => {
     type: RECEIVE_SERVER,
     server
   }
+};
+
+const removeServer = (serverId) => {
+  return {
+    type: REMOVE_SERVER,
+    serverId
+  };
 };
 
 export const fetchServers = () => {
@@ -45,6 +53,30 @@ export const updateServer = (server) => {
   return (dispatch) => {
     return ServerAPIUtil.updateServer(server).then((server) => {
       return dispatch(receiveServer(server));
+    });
+  };
+};
+
+export const deleteServer = (serverId) => {
+  return (dispatch) => {
+    return ServerAPIUtil.deleteServer(serverId).then(() => {
+      return dispatch(removeServer(serverId));
+    });
+  };
+};
+
+export const joinServer = (serverName) => {
+  return (dispatch) => {
+    return ServerAPIUtil.joinServer(serverName).then((server) => {
+      return dispatch(receiveServer(server));
+    });
+  };
+};
+
+export const leaveServer = (serverId) => {
+  return (dispatch) => {
+    return ServerAPIUtil.leaveServer(serverId).then((res) => {
+      return dispatch(removeServer(res));
     });
   };
 };

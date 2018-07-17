@@ -28,9 +28,24 @@ export const updateServer = (server) => {
   });
 };
 
-export const joinServer = () => {
+export const deleteServer = (serverId) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/servers/${serverId}`,
+  });
+}
+
+export const joinServer = (server_name) => {
   return $.ajax({
     method: 'POST',
-    url: `/api/server_memberships`,
+    url: `api/server_memberships`,
+    data: { server_name }
+  });
+};
+
+export const leaveServer = (serverId) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/server_memberships/${serverId}`
   });
 };

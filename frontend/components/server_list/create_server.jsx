@@ -35,8 +35,8 @@ export default class CreateServer extends React.Component {
             <textarea value={this.state.server_info} placeholder="Enter a Brief Description. (Optional)" onChange={this.updateServerInfo.bind(this)}/>
           </div>
           <div className="create-join-buttons">
-            <button className="back-button" onClick={() => this.props.openModal('AddServer')}><img className="back-arrow" src={backArrow}/>BACK</button>
             <button className="create-server-button" onClick={this.handleSubmit}>Create</button>
+            <button className="back-button" onClick={() => this.props.openModal('AddServer')}><img className="back-arrow" src={backArrow}/>BACK</button>
           </div>
       </form>
     )

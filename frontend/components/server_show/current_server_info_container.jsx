@@ -1,20 +1,22 @@
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import CurrentServerInfo from './current_server_info';
-import { fetchServer, fetchServers } from '../../util/server_api_util';
+import { fetchServer, fetchServers, leaveServer, deleteServer } from '../../actions/server_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     currentServerId: ownProps.match.params.id,
-    servers: state.entities.servers
+    servers: state.entities.servers,
+    currentUserId: state.ui.currentUserId
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchServer: (id) => dispatch(fetchServer(id))
+    fetchServer: (id) => dispatch(fetchServer(id)),
+    leaveServer: (serverId) => dispatch(leaveServer(serverId)),
+    deleteServer: (serverId) => dispatch(deleteServer(serverId))
   };
 };
 
