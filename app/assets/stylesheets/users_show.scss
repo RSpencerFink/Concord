@@ -1,7 +1,8 @@
-.home-page-user-col{
+.home-page-user-col, .server-user-info-column{
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 240px;
 }
 
 .user-show-container {
@@ -27,7 +28,7 @@
   cursor: pointer;
 }
 
-.user-list-item:hover{
+.user-list-item:hover {
   background-color: #41454C;
 }
 
@@ -50,7 +51,7 @@
   margin-right: 10px;
 }
 
-.user-list-title {
+.user-list-title, .channel-list-title {
   text-align: center;
   color: #f6f6f7;
   opacity: .3;

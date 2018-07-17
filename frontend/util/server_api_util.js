@@ -33,7 +33,7 @@ export const deleteServer = (serverId) => {
     method: 'DELETE',
     url: `api/servers/${serverId}`,
   });
-}
+};
 
 export const joinServer = (server_name) => {
   return $.ajax({

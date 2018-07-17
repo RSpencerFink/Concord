@@ -1,6 +1,7 @@
 import * as ServerAPIUtil from '../util/server_api_util'
 
 export const RECEIVE_ALL_SERVERS = "RECEIVE_ALL_SERVERS";
+export const RECEIVE_CURRENT_SERVER = "RECEIVE_CURRENT_SERVER";
 export const RECEIVE_SERVER = "RECEIVE_SERVER";
 export const REMOVE_SERVER = "REMOVE_SERVER";
 
@@ -21,6 +22,13 @@ const receiveServer = (server) => {
 const removeServer = (serverId) => {
   return {
     type: REMOVE_SERVER,
+    serverId
+  };
+};
+
+export const receiveCurrentServer = (serverId) => {
+  return {
+    type: RECEIVE_CURRENT_SERVER,
     serverId
   };
 };

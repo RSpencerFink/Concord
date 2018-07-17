@@ -13,7 +13,7 @@
 
 class Server < ApplicationRecord
   validates :server_name, :server_owner_id, :server_image_url, presence: true
-  validates :server_name, uniqueness: true 
+  validates :server_name, uniqueness: true
 
   after_initialize :ensure_server_image_url
 
@@ -29,6 +29,10 @@ class Server < ApplicationRecord
   has_many :members,
   through: :memberships,
   source: :user
+
+  has_many :channels,
+  foreign_key: :server_id,
+  class_name: :Channel
 
   private
   def ensure_server_image_url

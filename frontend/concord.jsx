@@ -5,8 +5,10 @@ import Root from './components/root';
 import * as sessions from './util/session_api_util';
 import * as users from './util/users_api_util';
 import * as servers from './util/server_api_util';
+import * as channels from './util/channel_api_util';
 import fetchUsers from './actions/user_actions';
 import fetchServers from './actions/server_actions';
+import fetchChannels from './actions/channel_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -34,7 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.logout = sessions.logout;
   window.fetchUsers = fetchUsers;
   window.fetchServers = fetchServers;
+  window.fetchChannels = fetchChannels;
   window.createServer = servers.createServer;
+  window.createChannel = channels.createServer;
   //
 
   const root = document.getElementById('root');

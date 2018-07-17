@@ -1,0 +1,49 @@
+
+.channel-list-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #2F3136;
+  color: #f6f6f77a;
+  font-family: 'Whitney-SemiBold';
+  overflow-y: scroll;
+  min-height: 1px;
+  align-items: center;
+
+}
+.channel-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.channel-list-item {
+  display: flex;
+  flex-direction: row;
+  padding-right: 5px;
+  text-overflow: ellipsis;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  margin: 1px 8px 1px 8px;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.channel-list-item:hover {
+  color: #fff;
+}
+
+.channel-list-item.active {
+  background-color: #41454C;
+}
+
+.new-channel-button {
+  height: 32px;
+  background-color: #41454C;
+  padding: 0;
+  width: 75%;
+}
