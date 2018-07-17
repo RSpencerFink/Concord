@@ -6,7 +6,7 @@ import { fetchServer, fetchServers, leaveServer, deleteServer } from '../../acti
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentServerId: ownProps.match.params.id,
+    currentServerId: state.ui.currentServerId,
     servers: state.entities.servers,
     currentUserId: state.ui.currentUserId
   };

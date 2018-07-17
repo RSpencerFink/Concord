@@ -6,7 +6,7 @@ export default class CurrentServerInfo extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   componenDidMount(){
-    this.props.fetchServer[this.props.match.params.serverId]
+    this.props.fetchServer[this.props.currentServerId]
   }
 
   handleClick(e){

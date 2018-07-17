@@ -15,6 +15,7 @@ export default class Home extends React.Component {
       <div className="main-page">
         <Modal />
         <ServerListContainer />
+        <Route path="/channels/:id" component={ ServerShowContainer } />
         <Switch>
           <Route exact path="/" component={ WelcomeContainer } />
           <Route path="/servers/:id" component={ ServerShowContainer } />

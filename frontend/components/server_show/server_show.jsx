@@ -10,11 +10,18 @@ export default class ServerShow extends React.Component {
 
   }
   componentDidMount(){
-    this.props.receiveCurrentServer(Number(this.props.match.params.id));
-  }
+    if (this.props.match.path === "/servers/:id") {
+      this.props.receiveCurrentServer(Number(this.props.match.params.id));
+    } else {
+      this.props.fetchChannel(Number(this.props.match.params.id));
+      this.props.receiveCurrentChannel(Number(this.props.match.params.id));
+      debugger
+      const currentServerId = this.props.channels[this.props.currentChannelId].server_id
+      this.props.fetchServer(currentServerId)
+    };
+  };
 
   render(){
-    debugger
     return (
       <div>
         <div className="server-user-info-column">
