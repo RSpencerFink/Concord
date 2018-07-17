@@ -10,7 +10,6 @@
   flex-shrink: 0;
   overflow-x: hidden;
   overflow-y: scroll;
-  position: relative;
   width: 70px;
   height: 100vh;
   align-items: center;
@@ -32,8 +31,12 @@
   background-size: 100% 100%;
   cursor: pointer;
   transition: all 0.25s ease;
-  position: relative;
   // transition-duration: .25s;
+}
+
+.server-list-item.active{
+  border-radius: 15px;
+
 }
 
 .server-list-item:hover {
@@ -59,15 +62,13 @@
 
 .server-name {
   position: absolute;
-  top: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  display: none; /* comment this out for CSS hover */
-  background-color: #333;
-  right: -50px;
-  /*transition: all 0.5s ease;*/
+  display: none;
+  transition: all 0.5s ease;
+  background-color: #151515;
+  left: 80px;
+  padding: 10px;
+  color: #fff;
+  margin-top: 5px;
 }
 
 .server-name.show {

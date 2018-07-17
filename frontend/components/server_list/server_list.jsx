@@ -7,17 +7,30 @@ export default class ServerList extends React.Component {
   constructor(props){
     super(props);
     this.currentUser = props.users[props.currentUserId];
-    this.state = {className: "server-name"}
-    this.handleName = this.handleName.bind(this);
-    this.unHover = this.unHover.bind(this);
+    this.state = {
+      HomeClassName: "server-name",
+      NewClassName: "server-name"
+    }
+    this.hoverHome = this.hoverHome.bind(this);
+    this.unHoverHome = this.unHoverHome.bind(this);
+    this.hoverNew = this.hoverNew.bind(this);
+    this.unHoverNew = this.unHoverNew.bind(this);
   }
 
-  handleName(){
-    this.setState({className: "server-name show"})
+  hoverHome(){
+    this.setState({HomeClassName: "server-name show"})
   }
 
-  unHover(){
-    this.setState({className: "server-name"})
+  unHoverHome(){
+    this.setState({HomeClassName: "server-name"})
+  }
+
+  hoverNew(){
+    this.setState({NewClassName: "server-name show"})
+  }
+
+  unHoverNew(){
+    this.setState({NewClassName: "server-name"})
   }
 
   componentDidMount() {
@@ -31,15 +44,15 @@ export default class ServerList extends React.Component {
     return (
       <div className="server-list-container">
         <ul className="server-list">
-          <Link onMouseOver={this.handleName} onMouseLeave={this.unHover} to="/" className="home-button">
-            <span className={this.state.className}>Home</span>
+          <Link onMouseOver={this.hoverHome} onMouseLeave={this.unHoverHome} to="/" className="home-button">
+            <span className={this.state.HomeClassName}>Home</span>
           </Link>
           <div className="list-separator"></div>
           { serverListItems }
           <div className="list-separator"></div>
-          <button onMouseOver={this.handleName} onMouseLeave={this.unHover} className="add-server-button" onClick={() => this.props.openModal('AddServer')}>
+          <button onMouseOver={this.hoverNew} onMouseLeave={this.unHoverNew} className="add-server-button" onClick={() => this.props.openModal('AddServer')}>
             <span>+</span>
-            <span className={this.state.className}>Add New Server</span>
+            <span className={this.state.NewClassName}>Add New Server</span>
           </button>
         </ul>
       </div>
