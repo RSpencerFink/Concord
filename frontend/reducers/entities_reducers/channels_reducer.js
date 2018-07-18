@@ -7,6 +7,7 @@ import { merge } from 'lodash';
   const oldState = merge({}, state);
   switch (action.type) {
     case RECEIVE_ALL_CHANNELS:
+      return merge({}, action.channels)
     case RECEIVE_SERVER:
       return merge({}, action.payload.channels);
     case RECEIVE_CHANNEL:

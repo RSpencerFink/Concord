@@ -26,7 +26,7 @@
   text-overflow: ellipsis;
   align-items: center;
   justify-content: space-between;
-  height: 32px;
+  height: 14px;
   margin: 1px 8px 1px 8px;
   padding: 8px;
   text-decoration: none;
@@ -40,6 +40,7 @@
 
 .channel-list-item.active {
   background-color: #41454C;
+  height: 14px;
 }
 
 .new-channel-button {
