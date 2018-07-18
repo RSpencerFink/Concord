@@ -4,12 +4,12 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.includes(:servers, :owned_servers).all
     render '/api/users/index'
   end
 
   def show
-    @user = User.find_by(params[:id]).includes(:server_ids, :owned_server_ids)
+    @user = User.includes(:servers, :owned_servers).find_by(params[:id])
     render '/api/users/show'
   end
 

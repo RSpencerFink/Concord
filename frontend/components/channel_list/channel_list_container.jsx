@@ -1,20 +1,22 @@
 import { connect } from 'react-redux';
 import ChannelList from './channel_list';
-import { fetchChannels } from '../../actions/channel_actions';
+import { fetchChannels, createChannel } from '../../actions/channel_actions';
 import { withRouter } from 'react-router';
+import { openModal } from '../../actions/modal_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     channels: Object.values(state.entities.channels),
-    currentServerId: ownProps.match.params.id
+    currentServerId: state.ui.currentServerId
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchChannels: () => dispatch(fetchChannels())
   };
+  createChannel: (channel) => dispatch(createChannel(channel)),
+  openModal: (modal) => dispatch(openModal(modal))
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ChannelList));
+export default withRouter(connect(mapStateToProps, null)(ChannelList));

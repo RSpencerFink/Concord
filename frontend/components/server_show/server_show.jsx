@@ -11,15 +11,24 @@ export default class ServerShow extends React.Component {
   }
   componentDidMount(){
     if (this.props.match.path === "/servers/:id") {
+      this.props.fetchServer(this.props.match.params.id);
       this.props.receiveCurrentServer(Number(this.props.match.params.id));
+      this.props.receiveCurrentChannel(null);
     } else {
-      this.props.fetchChannel(Number(this.props.match.params.id));
+      this.props.fetchServers();
       this.props.receiveCurrentChannel(Number(this.props.match.params.id));
-      debugger
-      const currentServerId = this.props.channels[this.props.currentChannelId].server_id
-      this.props.fetchServer(currentServerId)
+      this.props.fetchChannel(Number(this.props.match.params.id));
     };
   };
+
+  componentWillReceiveProps(){
+    debugger
+    if (Number(this.props.match.params.id) !== this.props.currentServerId) {
+      this.props.fetchServer(Number(this.props.match.params.id)).then(() => {
+        return this.props.receiveCurrentServer(Number(this.props.match.params.id))
+      })
+    }
+  }
 
   render(){
     return (

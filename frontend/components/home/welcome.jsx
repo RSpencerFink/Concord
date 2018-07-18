@@ -5,6 +5,7 @@ import UsersShowContainer from '../users_show/users_show_container';
 export default class Welcome extends React.Component {
   componentDidMount(){
     this.props.receiveCurrentServer(null);
+    this.props.receiveCurrentChannel(null);
   }
   render(){
     return (

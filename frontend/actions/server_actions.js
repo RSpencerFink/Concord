@@ -1,4 +1,4 @@
-import * as ServerAPIUtil from '../util/server_api_util'
+import * as ServerAPIUtil from '../util/server_api_util';
 
 export const RECEIVE_ALL_SERVERS = "RECEIVE_ALL_SERVERS";
 export const RECEIVE_CURRENT_SERVER = "RECEIVE_CURRENT_SERVER";
@@ -12,11 +12,11 @@ const receiveAllServers = (servers) => {
   };
 };
 
-const receiveServer = (server) => {
+const receiveServer = (payload) => {
   return {
     type: RECEIVE_SERVER,
-    server
-  }
+    payload
+  };
 };
 
 const removeServer = (serverId) => {

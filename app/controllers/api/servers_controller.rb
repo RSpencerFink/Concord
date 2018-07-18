@@ -17,11 +17,11 @@ class Api::ServersController < ApplicationController
   end
 
   def index
-    @servers = current_user.servers
+    @servers = current_user.servers.includes(:channels)
   end
 
   def show
-    @server = Server.find(params[:id])
+    @server = Server.includes(:channels).find(params[:id])
   end
 
   def edit

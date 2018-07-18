@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import AddServer from './server_list/add_server';
 import CreateServer from './server_list/create_server_container';
 import JoinServer from './server_list/join_server_container';
+import CreateChannel from './channel_list/create_channel_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -19,6 +20,9 @@ function Modal({modal, closeModal}) {
       break;
     case 'CreateServer':
       component = <CreateServer />;
+      break;
+    case 'CreateChannel':
+      component = <CreateChannel />;
       break;
     default:
       return null;

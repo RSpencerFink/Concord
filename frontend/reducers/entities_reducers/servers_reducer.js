@@ -8,7 +8,7 @@ import { merge } from 'lodash';
     case RECEIVE_ALL_SERVERS:
       return action.servers;
     case RECEIVE_SERVER:
-      return merge(oldState, action.server);
+      return merge(oldState, action.payload.servers);
     case REMOVE_SERVER:
       delete oldState[action.serverId];
       return oldState;

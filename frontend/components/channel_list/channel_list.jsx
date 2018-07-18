@@ -3,11 +3,9 @@ import ChannelListItem from './channel_list_item';
 
 export default class ChannelList extends React.Component {
 
-  componentDidMount(){
-    this.props.fetchChannels()
-  }
-
   render(){
+    if (!this.props.channels) {return null}
+
     const allChannels = this.props.channels.map((channel) => {
       return (<ChannelListItem key={ channel.id } channel={ channel } />)
     })
@@ -16,7 +14,7 @@ export default class ChannelList extends React.Component {
         <ul className="channel-list">
           { allChannels }
         </ul>
-        <button className="new-channel-button">Create New Channel</button>
+        <button onCLick={() => this.props.openModal('CreateChannel')} className="new-channel-button">Create New Channel</button>
       </div>
     );
   };
