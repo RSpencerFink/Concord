@@ -9,9 +9,13 @@ export default class Welcome extends React.Component {
   }
   render(){
     return (
-      <div className="home-page-user-col">
-        <UsersShowContainer />
-        <CurrentUserContainer />
+      <div className="home-page">
+        <div className="home-page-user-col">
+          <UsersShowContainer />
+          <CurrentUserContainer />
+        </div>
+        <div className="welcome">
+        </div>
       </div>
     );
   }

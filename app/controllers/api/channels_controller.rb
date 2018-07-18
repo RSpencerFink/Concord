@@ -1,10 +1,13 @@
 class Api::ChannelsController < ApplicationController
   def index
+    # debugger
+    # @server = Server.find(params[:server_id])
+    # @channels = @server.channels
     @channels = Channel.all
   end
 
   def show
-    @Channel = Channel.find(params[:id])
+    @channel = Channel.find(params[:id])
   end
 
   def new
@@ -21,15 +24,15 @@ class Api::ChannelsController < ApplicationController
   end
 
   def edit
-    @Channel = Channel.find(params[:id])
+    @channel = Channel.find(params[:id])
   end
 
   def update
-    @Channel = Channel.find(params[:id])
+    @channel = Channel.find(params[:id])
   end
 
   def destroy
-    @Channel = Channel.find(params[:id])
+    @channel = Channel.find(params[:id])
   end
 
   private

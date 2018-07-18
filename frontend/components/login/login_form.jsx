@@ -12,10 +12,6 @@ export default class LoginForm extends React.Component {
     };
   }
 
-  componentDidMount(){
-    // this.props.fetchUsers();
-  }
-
   updateEmail (e) {
     this.setState({email: e.target.value});
   }

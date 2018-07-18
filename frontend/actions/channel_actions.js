@@ -33,9 +33,9 @@ export const receiveCurrentChannel = (channelId) => {
   };
 };
 
-export const fetchChannels = () => {
+export const fetchChannels = (currentServerId) => {
   return (dispatch) => {
-    return ChannelAPIUtil.fetchChannels().then((channels) => {
+    return ChannelAPIUtil.fetchChannels(currentServerId).then((channels) => {
       return dispatch(receiveAllChannels(channels));
     });
   };

@@ -2,6 +2,9 @@ import React from 'react';
 import ChannelListItem from './channel_list_item';
 
 export default class ChannelList extends React.Component {
+  componentDidMount(){
+    this.props.fetchChannels(this.props.currentServerId)
+  }
 
   render(){
     if (!this.props.channels) {return null}

@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    fetchChannels: (server_id) => dispatch(fetchChannels(server_id)),
     createChannel: (channel) => dispatch(createChannel(channel)),
     openModal: (modal) => dispatch(openModal(modal))
   };

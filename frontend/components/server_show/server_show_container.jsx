@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     servers: state.entities.servers,
     channels: state.entities.channels,
     currentServerId: state.ui.currentServerId,
-    currentChanneId: state.ui.currentChannelId
+    currentChannelId: state.ui.currentChannelId
   };
 };
 
@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchServers: () => dispatch(fetchServers()),
     fetchServer: (id) => dispatch(fetchServer(id)),
     fetchChannels: (currentServerId) => dispatch(fetchChannels(currentServerId)),
-    fetchChannel: (channelId) => dispatch(fetchChannels(channelId)),
+    fetchChannel: (channelId) => dispatch(fetchChannel(channelId)),
     receiveCurrentServer: (currentServerId) => dispatch(receiveCurrentServer(currentServerId)),
     receiveCurrentChannel: (currentChannelId) => dispatch(receiveCurrentChannel(currentChannelId))
   };
