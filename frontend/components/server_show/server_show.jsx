@@ -3,7 +3,6 @@ import CurrentServerInfoContainer from './current_server_info_container';
 import CurrentUserContainer from '../current_user/current_user_container';
 import ChannelListContainer from '../channel_list/channel_list_container';
 
-
 export default class ServerShow extends React.Component {
   constructor(props){
     super(props);
@@ -22,7 +21,6 @@ export default class ServerShow extends React.Component {
   };
 
   componentWillReceiveProps(){
-    debugger
     if (Number(this.props.match.params.id) !== this.props.currentServerId) {
       this.props.fetchServer(Number(this.props.match.params.id)).then(() => {
         return this.props.receiveCurrentServer(Number(this.props.match.params.id))

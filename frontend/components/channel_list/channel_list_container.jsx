@@ -14,9 +14,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    createChannel: (channel) => dispatch(createChannel(channel)),
+    openModal: (modal) => dispatch(openModal(modal))
   };
-  createChannel: (channel) => dispatch(createChannel(channel)),
-  openModal: (modal) => dispatch(openModal(modal))
 };
 
-export default withRouter(connect(mapStateToProps, null)(ChannelList));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ChannelList));

@@ -49,3 +49,53 @@
   width: 75%;
   margin-bottom: 10px;
 }
+
+.create-channel-container {
+  background-color: #36393f;
+  width: 440px;
+  max-height: 454px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.create-channel-title {
+  padding: 20px;
+  width: 100%;
+  font-family: 'Whitney-SemiBold';
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.create-channel-input-container {
+  width: 100%;
+}
+
+.create-channel-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  font-size: 14px;
+}
+
+.cancel-button {
+  padding: 2px 16px;
+  height: 34px;
+  width: 64px;
+  background-color: #36393f;
+}
+
+.cancel-button:hover{
+  background-color: #36393f;
+  text-decoration: underline;
+}
+
+.create-channel-button {
+  padding: 2px 16px;
+  height: 34px;
+}

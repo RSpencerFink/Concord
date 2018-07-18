@@ -14,7 +14,7 @@ export default class ChannelList extends React.Component {
         <ul className="channel-list">
           { allChannels }
         </ul>
-        <button onCLick={() => this.props.openModal('CreateChannel')} className="new-channel-button">Create New Channel</button>
+        <button className="new-channel-button" onClick={() => this.props.openModal('CreateChannel')} >Create New Channel</button>
       </div>
     );
   };
