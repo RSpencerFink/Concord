@@ -18,9 +18,9 @@ const mapDispatchToProps = (dispatch) => {
     fetchServers: () => dispatch(fetchServers()),
     fetchServer: (id) => dispatch(fetchServer(id)),
     fetchChannels: (currentServerId) => dispatch(fetchChannels(currentServerId)),
-    fetchChannel: (channelId) => dispatch(fetchChannel(channelId)),
+    fetchChannel: (serverId, id) => dispatch(fetchChannel(serverId, id)),
     receiveCurrentServer: (currentServerId) => dispatch(receiveCurrentServer(currentServerId)),
-    receiveCurrentChannel: (currentChannelId) => dispatch(receiveCurrentChannel(currentChannelId))
+    receiveCurrentChannel: (serverId, channelId) => dispatch(receiveCurrentChannel(serverId, channelId))
   };
 };
 

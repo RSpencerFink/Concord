@@ -11,7 +11,7 @@ import { merge } from 'lodash';
     case RECEIVE_SERVER:
       return merge({}, action.payload.channels);
     case RECEIVE_CHANNEL:
-      return merge(oldState, action.channel);
+      return merge(oldState, action.payload.channels);
     case REMOVE_CHANNEL:
       delete oldState[action.channelId];
       return oldState;

@@ -4,8 +4,7 @@ export default class CreateChannel extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      channel_name: "",
-      server_id: props.currentServerId
+      channel_name: ""
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -16,7 +15,7 @@ export default class CreateChannel extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createChannel(this.state).then(this.props.closeModal());
+    this.props.createChannel(this.props.currentServerId, this.state).then(this.props.closeModal());
   }
 
   render(){

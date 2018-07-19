@@ -7,7 +7,7 @@ export default class CurrentUser extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUsers();
+    // this.props.fetchUser(this.props.currentUserId);
   }
 
   render () {

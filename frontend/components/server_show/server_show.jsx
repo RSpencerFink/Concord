@@ -12,32 +12,28 @@ export default class ServerShow extends React.Component {
 
   }
   componentDidMount(){
-    if (this.props.match.path === "/servers/:id") {
-      this.props.fetchServer(this.props.match.params.id);
-      this.props.receiveCurrentServer(Number(this.props.match.params.id));
-      this.props.receiveCurrentChannel(null);
+    if (this.props.match.path === "/servers/:server_id") {
+      this.props.fetchServer(this.props.match.params.server_id);
+      this.props.receiveCurrentChannel(Number(this.props.match.params.server_id), null);
     } else {
-      this.props.fetchServers();
-      this.props.receiveCurrentChannel(Number(this.props.match.params.id));
-      this.props.fetchChannel(Number(this.props.match.params.id));
+      this.props.receiveCurrentChannel(Number(this.props.match.params.server_id), Number(this.props.match.params.id));
+      this.props.fetchChannel(Number(this.props.match.params.server_id), Number(this.props.match.params.id));
     };
   };
 
   componentWillReceiveProps(newProps){
-    if (this.props.match.params.id !== newProps.match.params.id) {
-      this.props.fetchServer(newProps.match.params.id).then(() => {
-        this.props.receiveCurrentServer(newProps.match.params.id)
+    if ((this.props.match.path === "/servers/:server_id") && (this.props.match.params.server_id !== newProps.match.params.server_id)) {
+      this.props.fetchServer(newProps.match.params.server_id).then(() => {
+        this.props.receiveCurrentChannel(Number(this.props.match.params.server_id), null);
       })
+    };
+    if ((this.props.match.path === "/servers/:server_id/channels/:id") && (this.props.match.params.id !== newProps.match.params.id)){
+      this.props.fetchServer(newProps.match.params.server_id);
+      this.props.receiveCurrentChannel(Number(newProps.match.params.server_id), Number(newProps.match.params.id));
+      this.props.fetchChannel(Number(newProps.match.params.server_id), Number(newProps.match.params.id));
     }
   }
 
-  // let channelRendered;
-  // if (!this.props.currentChannelId) {
-  //   channelRendered = null;
-  // } else {
-  //   channelRendered = <ChannelShowContainer className="chat-window" channelId={this.props.currentChannelId} />
-  // }
-  // debugger
   render(){
     return (
       <div className="server-show">
@@ -57,6 +53,3 @@ export default class ServerShow extends React.Component {
     );
   }
 }
-
-
-// { channelRendered }

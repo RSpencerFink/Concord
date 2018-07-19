@@ -6,8 +6,9 @@ export default class CurrentServerInfo extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   componenDidMount(){
-    this.props.fetchServer(this.props.currentServerId)
+    this.props.fetchServer(this.props.match.params.server_id)
   }
+
 
   handleClick(e){
     const currentServerOwnerId = this.props.servers[this.props.currentServerId].server_owner_id;

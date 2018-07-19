@@ -26,7 +26,8 @@
   text-overflow: ellipsis;
   align-items: center;
   justify-content: space-between;
-  height: 14px;
+  min-height: 14px;
+  max-height: 14px;
   margin: 8px 8px 1px 8px;
   padding: 8px;
   text-decoration: none;
@@ -99,4 +100,14 @@
 .create-channel-button {
   padding: 2px 16px;
   height: 34px;
+}
+
+.remove-cross {
+  height: 14px;
+  display: none;
+  width: auto;
+}
+
+.remove-cross.show {
+  display: block
 }

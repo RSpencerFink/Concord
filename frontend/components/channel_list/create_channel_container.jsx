@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createChannel: (channel) => dispatch(createChannel(channel)),
+    createChannel: (serverId, channel) => dispatch(createChannel(serverId, channel)),
     closeModal: () => dispatch(closeModal())
   };
 };

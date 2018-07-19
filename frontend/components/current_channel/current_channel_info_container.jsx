@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import CurrentChannelInfo from './current_channel_info';
-import { fetchChannel } from '../../actions/channel_actions';
+import { fetchChannel, receiveCurrentChannel } from '../../actions/channel_actions';
+import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -12,8 +13,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchChannel: (id) => dispatch(fetchChannel(id))
+    fetchChannel: (serverId, id) => dispatch(fetchChannel(serverId, id)),
+    receiveCurrentChannel: (serverId, channelId) => dispatch(receiveCurrentChannel(serverId, channelId))
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CurrentChannelInfo);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CurrentChannelInfo));

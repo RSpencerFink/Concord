@@ -30,9 +30,9 @@ const receiveUser = (user) => {
 
 export const createUser = (user) => {
   return (dispatch) => {
-    return UsersAPIUtil.createUser(user).then((user) => {
-      dispatch(receiveUser(user));
-      return dispatch(receiveCurrentUser(user)),
+    return UsersAPIUtil.createUser(user).then((returnedUser) => {
+      dispatch(receiveUser(returnedUser));
+      return dispatch(receiveCurrentUser(returnedUser)),
       (err) => {
         return dispatch(receiveErrors(err.responseJSON));
       };
@@ -42,8 +42,8 @@ export const createUser = (user) => {
 
 export const login = (user) => {
   return (dispatch) => {
-    return SessionAPIUtil.login(user).then((user) => {
-      return dispatch(receiveCurrentUser(user)),
+    return SessionAPIUtil.login(user).then((returnedUser) => {
+      return dispatch(receiveCurrentUser(returnedUser)),
       (err) => {
         return dispatch(receiveErrors(err.responseJSON));
       };

@@ -49,11 +49,11 @@ class Api::ServersController < ApplicationController
 
   private
   def server_params
-    params.require(:server).permit(:server_name, :server_info, :server_image_url, :server_owner_id)
+    params.require(:server).permit(:server_name, :server_info, :server_image_url, :server_owner_id, :server_id)
   end
 
   def require_ownership
-    return if current_user.owned_servers.find_by(id: params[:id])
+    return if current_user.owned_servers.find(params[:server_id])
     render json: ['Forbidden'], status: :forbidden
   end
 end

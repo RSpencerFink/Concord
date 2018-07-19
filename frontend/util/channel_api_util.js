@@ -1,37 +1,36 @@
-export const fetchChannels = (currentServerId) => {
+export const fetchChannels = (server_id) => {
   return $.ajax({
     method: 'GET',
-    url: `/api/channels`,
-    data: { currentServerId }
+    url: `/api/servers/${server_id}/channels`,
   });
 };
 
-export const fetchChannel = (id) => {
+export const fetchChannel = (server_id, id) => {
   return $.ajax({
     method: 'GET',
-    url: `/api/channels/${id}`
+    url: `/api/servers/${server_id}/channels/${id}`
   });
 };
 
-export const createChannel = (channel) => {
+export const createChannel = (server_id, channel) => {
   return $.ajax({
     method: 'POST',
-    url: `/api/channels`,
+    url: `/api/servers/${server_id}/channels`,
     data: { channel }
   });
 };
 
-export const updateChannel = (channel) => {
+export const updateChannel = (server_id, channel) => {
   return $.ajax({
     method: 'POST',
-    url: `/api/channels/${channel.id}`,
+    url: `/api/servers/${server_id}/channels/${channel.id}`,
     data: { channel }
   });
 };
 
-export const deleteChannel = (channelId) => {
+export const deleteChannel = (server_id, id) => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/channels/${channelId}`,
+    url: `/api/servers/${server_id}/channels/${id}`,
   });
 };

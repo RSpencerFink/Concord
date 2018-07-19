@@ -12,10 +12,10 @@ const receiveAllChannels = (channels) => {
   };
 };
 
-const receiveChannel = (channel) => {
+const receiveChannel = (payload) => {
   return {
     type: RECEIVE_CHANNEL,
-    channel
+    payload
   }
 };
 
@@ -26,49 +26,50 @@ const removeChannel = (channelId) => {
   };
 };
 
-export const receiveCurrentChannel = (channelId) => {
+export const receiveCurrentChannel = (serverId, channelId) => {
   return {
     type: RECEIVE_CURRENT_CHANNEL,
+    serverId,
     channelId
   };
 };
 
-export const fetchChannels = (currentServerId) => {
+export const fetchChannels = (serverId) => {
   return (dispatch) => {
-    return ChannelAPIUtil.fetchChannels(currentServerId).then((channels) => {
+    return ChannelAPIUtil.fetchChannels(serverId).then((channels) => {
       return dispatch(receiveAllChannels(channels));
     });
   };
 };
 
-export const fetchChannel = (id) => {
+export const fetchChannel = (serverId, id) => {
   return (dispatch) => {
-    return ChannelAPIUtil.fetchChannel(id).then((channel) => {
+    return ChannelAPIUtil.fetchChannel(serverId, id).then((payload) => {
+      return dispatch(receiveChannel(payload));
+    });
+  };
+};
+
+export const createChannel = (serverId, channel) => {
+  return (dispatch) => {
+    return ChannelAPIUtil.createChannel(serverId, channel).then((channel) => {
       return dispatch(receiveChannel(channel));
     });
   };
 };
 
-export const createChannel = (channel) => {
+export const updateChannel = (serverId, channel) => {
   return (dispatch) => {
-    return ChannelAPIUtil.createChannel(channel).then((channel) => {
+    return ChannelAPIUtil.updateChannel(serverId, channel).then((channel) => {
       return dispatch(receiveChannel(channel));
     });
   };
 };
 
-export const updateChannel = (channel) => {
+export const deleteChannel = (serverId, id) => {
   return (dispatch) => {
-    return ChannelAPIUtil.updateChannel(channel).then((channel) => {
-      return dispatch(receiveChannel(channel));
-    });
-  };
-};
-
-export const deleteChannel = (channelId) => {
-  return (dispatch) => {
-    return ChannelAPIUtil.deleteChannel(channelId).then(() => {
-      return dispatch(removeChannel(channelId));
+    return ChannelAPIUtil.deleteChannel(serverId, id).then(() => {
+      return dispatch(removeChannel(id));
     });
   };
 };

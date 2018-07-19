@@ -8,7 +8,6 @@ export default class ServerListItem extends React.Component {
     this.state = {className: "server-name"}
     this.handleName = this.handleName.bind(this);
     this.unHover = this.unHover.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
   }
 
   handleName(){
@@ -18,10 +17,6 @@ export default class ServerListItem extends React.Component {
   unHover(){
     this.setState({className: "server-name"})
   }
-
-  // handleClick(){
-  //
-  // }
 
   render() {
     return (

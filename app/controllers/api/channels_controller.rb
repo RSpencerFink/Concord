@@ -1,13 +1,10 @@
 class Api::ChannelsController < ApplicationController
   def index
-    # debugger
-    # @server = Server.find(params[:server_id])
-    # @channels = @server.channels
-    @channels = Channel.all
+    @channels = Server.find(params[:server_id]).channels
   end
 
   def show
-    @channel = Channel.find(params[:id])
+    @channel = Channel.includes(:server).find(params[:id])
   end
 
   def new
@@ -15,7 +12,7 @@ class Api::ChannelsController < ApplicationController
   end
 
   def create
-    @channel = Channel.new(channel_params)
+    @channel = Server.find(params[:server_id]).channels.new(channel_params)
     if @channel.save
       render '/api/channels/show'
     else
@@ -33,10 +30,16 @@ class Api::ChannelsController < ApplicationController
 
   def destroy
     @channel = Channel.find(params[:id])
+    if @channel
+      @channel.destroy
+      render json: {}
+    else
+      render json: ['Unable to Delete Server'], status: 422
+    end
   end
 
   private
   def channel_params
-    params.require(:channel).permit(:channel_name, :channel_info, :server_id)
+    params.require(:channel).permit(:channel_name, :channel_info, :id, :server_id)
   end
 end
