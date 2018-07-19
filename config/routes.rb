@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       resource :session, only: [:new, :create, :destroy]
       resources :users, only: [:new, :create, :show, :index]
       resources :servers do
-        resources :channels
+        resources :channels do
+          resources :messages, only: [:create, :index]
+        end
       end
       resources :server_memberships, only: [:create, :destroy]
     end

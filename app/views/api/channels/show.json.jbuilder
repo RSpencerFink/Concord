@@ -9,3 +9,11 @@ json.servers do
       json.extract! @channel.server, :server_name, :server_info, :id, :server_owner_id, :server_image_url
     end
 end
+
+json.messages do
+  @channel.messages.each do |message|
+    json.set! message.id do
+      json.extract! message, :message, :user_id, :channel_id
+    end
+  end
+end
