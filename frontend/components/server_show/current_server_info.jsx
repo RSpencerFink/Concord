@@ -13,9 +13,9 @@ export default class CurrentServerInfo extends React.Component {
   handleClick(e){
     const currentServerOwnerId = this.props.servers[this.props.currentServerId].server_owner_id;
     if (this.props.currentUserId === currentServerOwnerId){
-      this.props.deleteServer(this.props.match.params.id).then(() => window.location.href = "/");
+      this.props.deleteServer(this.props.match.params.server_id).then(() => window.location.href = "/");
     } else {
-      this.props.leaveServer(this.props.match.params.id).then(() => window.location.href = "/");
+      this.props.leaveServer(this.props.match.params.server_id).then(() => window.location.href = "/");
     }
   }
 

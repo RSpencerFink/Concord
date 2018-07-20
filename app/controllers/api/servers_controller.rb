@@ -53,7 +53,7 @@ class Api::ServersController < ApplicationController
   end
 
   def require_ownership
-    return if current_user.owned_servers.find(params[:server_id])
+    return if current_user.owned_servers.find(params[:id])
     render json: ['Forbidden'], status: :forbidden
   end
 end
