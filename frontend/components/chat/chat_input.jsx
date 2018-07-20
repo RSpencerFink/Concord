@@ -12,6 +12,9 @@ export default class ChatInput extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
+    if ((this.props.match.path === "/servers/:server_id") {
+      return {}
+    }
     if (this.props.match.params.id !== newProps.match.params.id){
       this.props.fetchChannel(Number(newProps.match.params.server_id), Number(newProps.match.params.id));
     }

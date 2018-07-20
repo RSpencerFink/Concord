@@ -3,11 +3,11 @@ import MessageListItem from './message_list_item'
 
 export default class ChatLog extends React.Component{
 
-  componentWillReceiveProps(newProps){
-    if (this.props.match.params.id !== newProps.match.params.id){
-      this.props.fetchChannel(Number(newProps.match.params.server_id), Number(newProps.match.params.id));
-    }
-  }
+  // componentWillReceiveProps(newProps){
+  //   if ((this.props.match.path !== "/servers/:server_id") && (this.props.match.params.id !== newProps.match.params.id)){
+  //     this.props.fetchChannel(Number(newProps.match.params.server_id), Number(newProps.match.params.id));
+  //   }
+  // }
 
 
   render(){
