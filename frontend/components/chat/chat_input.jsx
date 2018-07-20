@@ -15,12 +15,16 @@ export default class ChatInput extends React.Component {
     this.setState({message: e.target.value})
   }
   render() {
+    let currentChannelName
+    if (this.props.channels[this.props.currentChannelId]) {
+      currentChannelName = this.props.channels[this.props.currentChannelId].channel_name;
+    } else {
+      currentChannelName = ""
+    }
     return (
-      <div className="chat-input-container">
-        <form className="chat-input" onSubmit={() => this.props.createMessage(this.props.currentServer_id, this.props.currentChannelId, this.state)}>
-          <input type="text" value={this.state.message} onChange={this.updateMessage}></input>
-        </form>
-      </div>
+      <form className="chat-input-form" onSubmit={() => this.props.createMessage(this.props.currentServer_id, this.props.currentChannelId, this.state)}>
+        <input className="chat-input" placeholder={`Message ${currentChannelName}`} type="text" value={this.state.message} onChange={this.updateMessage}></input>
+      </form>
     )
   }
 }

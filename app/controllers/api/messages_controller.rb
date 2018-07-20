@@ -1,16 +1,16 @@
-class MessagesController < ApplicationController
+class Api::MessagesController < ApplicationController
 
   def create
     @message = current_user.messages.new(message_params)
     if @message.save
-
+      render '/api/messages/show'
     else
       render json: @message.errors.full_messages, status: 422
     end
   end
 
   def index
-    @messages = Message.find_by(channel_id: params[:id])
+    @messages = Message.includes(:author).find_by(channel_id: params[:id])
   end
 
   private

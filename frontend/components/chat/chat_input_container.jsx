@@ -6,7 +6,8 @@ import { withRouter } from 'react-router';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentServerId: ownProps.match.params.server_id,
-    currentChannelId: ownProps.match.params.channel_id
+    currentChannelId: ownProps.match.params.channel_id,
+    channels: state.entities.channels
   }
 }
 
