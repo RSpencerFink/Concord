@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :users, only: [:new, :create, :show, :index]
       resources :servers do
         resources :channels do
-          resources :messages, only: [:create, :index]
+          resources :messages, only: [:create, :index, :show]
         end
       end
       resources :server_memberships, only: [:create, :destroy]

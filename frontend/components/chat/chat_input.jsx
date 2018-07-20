@@ -11,6 +11,12 @@ export default class ChatInput extends React.Component {
     this.updateMessage = this.updateMessage.bind(this);
   }
 
+  componentWillReceiveProps(newProps){
+    if (this.props.match.params.id !== newProps.match.params.id){
+      this.props.fetchChannel(Number(newProps.match.params.server_id), Number(newProps.match.params.id));
+    }
+  }
+
   updateMessage(e){
     this.setState({message: e.target.value})
   }
@@ -22,8 +28,9 @@ export default class ChatInput extends React.Component {
       currentChannelName = ""
     }
     return (
-      <form className="chat-input-form" onSubmit={() => this.props.createMessage(this.props.currentServer_id, this.props.currentChannelId, this.state)}>
-        <input className="chat-input" placeholder={`Message ${currentChannelName}`} type="text" value={this.state.message} onChange={this.updateMessage}></input>
+      <form className="chat-input-form" onSubmit={() => this.props.createMessage(this.props.currentServerId, this.props.currentChannelId, this.state)}>
+        <input className="chat-input" placeholder={`Message: ${currentChannelName}`} type="text" value={this.state.message} onChange={this.updateMessage}></input>
+        <button className="chat-input-button" onClick={() => this.props.createMessage(this.props.currentServerId, this.props.currentChannelId, this.state)}></button>
       </form>
     )
   }

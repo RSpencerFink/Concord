@@ -35,6 +35,11 @@ class User < ApplicationRecord
   through: :server_memberships,
   source: :server
 
+  has_many :messages,
+  foreign_key: :user_id,
+  class_name: :Message,
+  dependent: :destroy
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64
   end

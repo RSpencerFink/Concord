@@ -10,11 +10,11 @@ class Api::MessagesController < ApplicationController
   end
 
   def index
-    @messages = Message.includes(:author).find_by(channel_id: params[:id])
+    @messages = Channel.find_by(channel_id: params[:id]).messages
   end
 
   private
   def message_params
-    params.require(:message).permit(:user_id, :channel_id, :message)
+    params.require(:message).permit(:user_id, :channel_id, :message, :server_id)
   end
 end
