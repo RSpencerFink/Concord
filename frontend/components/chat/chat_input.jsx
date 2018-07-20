@@ -12,7 +12,7 @@ export default class ChatInput extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    if ((this.props.match.path === "/servers/:server_id") {
+    if (this.props.match.path === "/servers/:server_id") {
       return {}
     }
     if (this.props.match.params.id !== newProps.match.params.id){
