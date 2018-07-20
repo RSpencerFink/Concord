@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ChatLog from './chat_log';
 import { withRouter } from 'react-router';
+import { fetchChannel } from '../../actions/channel_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
