@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import ChannelShow from './channel_show';
+import { withRouter } from 'react-router';
+
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -13,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChannelShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ChannelShow));

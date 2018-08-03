@@ -5,14 +5,13 @@ import ChannelListContainer from '../channel_list/channel_list_container';
 import CurrentChannelInfoContainer from '../current_channel/current_channel_info_container';
 import ServerUsersShowContainer from '../users_show/server_users_show_container';
 import ChannelShowContainer from '../channel_show/channel_show_container';
-import ChatInputContainer from '../chat/chat_input_container';
 import ChatLogContainer from '../chat/chat_log_container';
 
 export default class ServerShow extends React.Component {
   constructor(props){
     super(props);
-
   }
+
   componentDidMount(){
     if (this.props.match.path === "/servers/:server_id") {
       this.props.fetchServer(this.props.match.params.server_id);
@@ -47,10 +46,7 @@ export default class ServerShow extends React.Component {
         <div className="channel-info-column">
           <CurrentChannelInfoContainer />
           <div className="chat-and-members-container">
-            <div className="chat-column">
-              <ChatLogContainer />
-              <ChatInputContainer />
-            </div>
+            <ChannelShowContainer />
             <ServerUsersShowContainer />
           </div>
         </div>

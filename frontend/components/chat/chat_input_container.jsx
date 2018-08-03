@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ChatInput from './chat_input';
 import { createMessage } from '../../actions/message_actions';
-import { fetchChannel } from '../../actions/channel_actions';
+import { fetchChannel, receiveCurrentChannel } from '../../actions/channel_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
@@ -15,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     createMessage: (serverId, channelId, message) => dispatch(createMessage(serverId, channelId, message)),
-    fetchChannel: (serverId, channelId) => dispatch(fetchChannel(serverId, channelId))
+    receiveCurrentChannel: (serverId, channelId) => dispatch(receiveCurrentChannel(serverId, channelId))
+
   }
 }
 
