@@ -21,7 +21,7 @@ export default class ChatLog extends React.Component{
       })
 
       return (
-        <ul className="chat-window">
+        <ul id="chat-scroll" className="chat-window">
           { messages }
           <div id="scroll-anchor"></div>
         </ul>
