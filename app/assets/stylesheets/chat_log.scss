@@ -1,0 +1,50 @@
+.chat-log-separator {
+  background: #ffffff3b;
+  min-height: 1px;
+  margin: 20px;
+  top: 0;
+  width: 95%;
+  left: 20%;
+  right: 20%;
+}
+
+.chat-window {
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-list-item {
+  width: 100%;
+}
+
+.message {
+  display: flex;
+  flex-direction: row;
+}
+
+.message-list-item-portrait {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background-image: url(/assets/placeholder_user.png);
+  background-size: cover;
+  margin: 0 20px 20px 20px;
+}
+
+.message-list-item-user {
+  font-family: 'Whitney-SemiBold';
+  color: #fff;
+  font-size: 18px;
+}
+
+.message-list-item-date {
+  color: hsla(0,0%,100%,.2);
+  font-size: 14px;
+}
+
+.message-list-item-body {
+  color: #fff;
+  font-size: 16px;
+}

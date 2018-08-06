@@ -1,5 +1,6 @@
-@messages.each do |message|
-  json.set! message.id do
-    json.extract! message, :id, :user_id, :channel_id, :message
+@messages.each do |message_el|
+  json.set! message_el.id do
+    debugger
+    json.extract! message_el, :id, :user_id, :channel_id, :message, :created_at
   end
 end

@@ -16,7 +16,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     createMessage: (serverId, channelId, message) => dispatch(createMessage(serverId, channelId, message)),
     receiveCurrentChannel: (serverId, channelId) => dispatch(receiveCurrentChannel(serverId, channelId))
-
   }
 }
 

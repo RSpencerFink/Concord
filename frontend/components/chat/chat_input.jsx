@@ -34,8 +34,9 @@ export default class ChatInput extends React.Component {
     return (
       <form className="chat-input-form" onSubmit={() => this.props.createMessage(this.props.currentServerId, this.props.currentChannelId, this.state)}>
         <input className="chat-input" placeholder={`Message: ${currentChannelName}`} type="text" value={this.state.message} onChange={this.updateMessage}></input>
-        <button className="chat-input-button" onClick={() => this.props.createMessage(this.props.currentServerId, this.props.currentChannelId, this.state)}></button>
       </form>
     )
   }
 }
+
+// <button className="chat-input-button" onClick={() => this.props.createMessage(this.props.currentServerId, this.props.currentChannelId, this.state)}></button>

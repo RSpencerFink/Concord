@@ -15,14 +15,13 @@ export default class ChatLog extends React.Component{
       return (<ol className="chat-window"></ol>)
     } else {
       const messages = this.props.messages.map((message) => {
-        console.log(message);
-        return (<MessageListItem key={ message.id } message={ message }/>)
+        return (<MessageListItem key={ message.id } message={ message } user={ this.props.users[message.user_id] }/>)
       })
 
       return (
-        <ol className="chat-window">
+        <ul className="chat-window">
           { messages }
-        </ol>
+        </ul>
       );
     }
   }
