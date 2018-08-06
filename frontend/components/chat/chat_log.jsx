@@ -12,6 +12,18 @@ export default class ChatLog extends React.Component{
     }
   }
 
+  componentDidMount(){
+    const scroll = document.querySelector('#chat-scroll');
+    scroll.scrollTop = scroll.scrollHeight
+  }
+
+  componentDidUpdate(){
+    const scroll = document.querySelector('#chat-scroll');
+    scroll.scrollTop = scroll.scrollHeight
+  }
+
+
+
   render(){
     if (!this.props.messages) {
       return (<ol className="chat-window"></ol>)
