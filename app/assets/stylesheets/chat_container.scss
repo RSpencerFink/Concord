@@ -6,8 +6,9 @@
 }
 
 .chat-window {
-  height: 80%;
   width: 100%;
+  overflow: scroll;
+  height: 85%;
 }
 
 .chat-input-form {

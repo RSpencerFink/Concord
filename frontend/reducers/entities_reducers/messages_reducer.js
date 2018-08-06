@@ -1,6 +1,6 @@
 import { RECEIVE_MESSAGE, RECEIVE_ALL_MESSAGES } from '../../actions/message_actions';
 import { RECEIVE_CHANNEL } from '../../actions/channel_actions';
-import merge from 'lodash';
+import {merge} from 'lodash';
 
 const messagesReducer = (state = {}, action) => {
   Object.freeze(state);
