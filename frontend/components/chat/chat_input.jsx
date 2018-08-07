@@ -26,8 +26,8 @@ export default class ChatInput extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault()
-    this.props.createMessage(this.state).then(this.setState({body: ""}))
+    e.preventDefault();
+    this.props.createMessage(this.state).then(this.setState({body: ""}));
   }
 
   render() {
