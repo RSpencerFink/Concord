@@ -5,7 +5,7 @@ import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-
+    currentChannelId: state.ui.currentChannelId,
   };
 };
 

@@ -5,6 +5,7 @@ import { fetchChannel, receiveCurrentChannel } from '../../actions/channel_actio
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
     currentServerId: parseInt(ownProps.match.params.server_id),
     currentChannelId: parseInt(ownProps.match.params.id),

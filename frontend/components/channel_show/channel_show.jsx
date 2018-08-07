@@ -4,11 +4,17 @@ import ChatInputContainer from '../chat/chat_input_container';
 
 export default class ChannelShow extends React.Component{
   render(){
-    return (
-      <div className="chat-column">
-        <ChatLogContainer />
-        <ChatInputContainer />
-      </div>
-    );
+    if (!this.props.currentChannelId){
+      return (
+        <div className="chat-column"></div>
+      )
+    } else {
+      return (
+        <div className="chat-column">
+          <ChatLogContainer />
+          <ChatInputContainer />
+        </div>
+      );
+    }
   }
 }
