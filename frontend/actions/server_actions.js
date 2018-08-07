@@ -3,6 +3,7 @@ import * as ServerAPIUtil from '../util/server_api_util';
 export const RECEIVE_ALL_SERVERS = "RECEIVE_ALL_SERVERS";
 export const RECEIVE_CURRENT_SERVER = "RECEIVE_CURRENT_SERVER";
 export const RECEIVE_SERVER = "RECEIVE_SERVER";
+export const RECEIVE_NEW_SERVER = "RECEIVE_NEW_SERVER";
 export const REMOVE_SERVER = "REMOVE_SERVER";
 
 const receiveAllServers = (servers) => {
@@ -15,6 +16,14 @@ const receiveAllServers = (servers) => {
 const receiveServer = (payload) => {
   return {
     type: RECEIVE_SERVER,
+    payload
+  };
+};
+
+const receiveNewServer = (payload) => {
+  debugger
+  return {
+    type: RECEIVE_NEW_SERVER,
     payload
   };
 };
@@ -52,7 +61,7 @@ export const fetchServer = (id) => {
 export const createServer = (server) => {
   return (dispatch) => {
     return ServerAPIUtil.createServer(server).then((server) => {
-      return dispatch(receiveServer(server));
+      return dispatch(receiveNewServer(server));
     });
   };
 };
@@ -76,7 +85,7 @@ export const deleteServer = (serverId) => {
 export const joinServer = (serverName) => {
   return (dispatch) => {
     return ServerAPIUtil.joinServer(serverName).then((server) => {
-      return dispatch(receiveServer(server));
+      return dispatch(receiveNewServer(server));
     });
   };
 };
