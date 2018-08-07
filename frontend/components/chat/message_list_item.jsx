@@ -12,7 +12,7 @@ export default class MessageListItem extends React.Component{
               <span className="message-list-item-user">{this.props.user.username} </span>
               <span className="message-list-item-date">{new Date(this.props.message.created_at).toDateString()} at {new Date(this.props.message.created_at).toLocaleTimeString()} </span>
             </div>
-            <span className="message-list-item-body">{this.props.message.message}</span>
+            <span className="message-list-item-body">{this.props.message.body}</span>
           </div>
         </div>
       </li>

@@ -3,7 +3,7 @@
 # Table name: messages
 #
 #  id         :bigint(8)        not null, primary key
-#  message    :text             not null
+#  body       :text             not null
 #  user_id    :integer          not null
 #  channel_id :integer          not null
 #  created_at :datetime         not null
@@ -12,7 +12,7 @@
 
 class Message < ApplicationRecord
 
-  validates :message, :user_id, :channel_id, presence: true
+  validates :body, :user_id, :channel_id, presence: true
 
   belongs_to :author,
   foreign_key: :user_id,
@@ -21,9 +21,5 @@ class Message < ApplicationRecord
   belongs_to :channel,
   foreign_key: :channel_id,
   class_name: :Channel
-
-  def readable_time
-    self.created_at.to_formatted_s(:long_ordinal)
-  end
 
 end

@@ -4,10 +4,11 @@ export default class ChatInput extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      message: "",
-      channel_id: this.props.currentChannelId
+      body: "",
+      channel_id: this.props.currentChannelId,
+      server_id: this.props.currentServerId
     }
-
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.updateMessage = this.updateMessage.bind(this);
   }
 
@@ -21,7 +22,12 @@ export default class ChatInput extends React.Component {
   }
 
   updateMessage(e){
-    this.setState({message: e.target.value})
+    this.setState({ body: e.target.value })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    this.props.createMessage(this.state).then(this.setState({body: ""}))
   }
 
   render() {
@@ -34,12 +40,10 @@ export default class ChatInput extends React.Component {
     return (
       <div className="chat-input-form-container">
         <div className="chat-input-separator"></div>
-        <form className="chat-input-form" onSubmit={() => this.props.createMessage(this.props.currentServerId, this.props.currentChannelId, this.state).then(this.setState({message: ""}))}>
-          <input className="chat-input" placeholder={`Message: ${currentChannelName}`} type="text" value={ this.state.message } onChange={ this.updateMessage }></input>
+        <form className="chat-input-form" onSubmit={this.handleSubmit}>
+          <input className="chat-input" placeholder={`Message: ${currentChannelName}`} type="text" value={ this.state.body } onChange={ this.updateMessage }></input>
         </form>
       </div>
     )
   }
 }
-
-// <button className="chat-input-button" onClick={() => this.props.createMessage(this.props.currentServerId, this.props.currentChannelId, this.state)}></button>

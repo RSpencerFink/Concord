@@ -25,9 +25,9 @@ export const fetchMessages = (serverId, channelId) => {
   };
 };
 
-export const createMessage = (serverId, channelId, message) => {
+export const createMessage = (message) => {
   return (dispatch) => {
-    return MessageAPIUtil.createMessage(serverId, channelId, message).then((message) => {
+    return MessageAPIUtil.createMessage(message).then((message) => {
       return dispatch(receiveMessage(message));
     });
   };

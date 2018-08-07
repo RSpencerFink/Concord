@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createMessage: (serverId, channelId, message) => dispatch(createMessage(serverId, channelId, message)),
+    createMessage: (message) => dispatch(createMessage(message)),
     receiveCurrentChannel: (serverId, channelId) => dispatch(receiveCurrentChannel(serverId, channelId))
   }
 }
