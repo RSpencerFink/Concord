@@ -2,6 +2,7 @@
   "name": "Concord",
   "private": true,
   "dependencies": {
+    "actioncable": "^5.2.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
@@ -11,6 +12,7 @@
     "react-dom": "^16.4.1",
     "react-modal": "^3.5.1",
     "react-mutation-observer": "^1.1.0",
+    "react-onclickoutside": "^6.7.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",

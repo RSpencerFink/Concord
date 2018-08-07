@@ -19,7 +19,7 @@ const receiveServer = (payload) => {
   };
 };
 
-const removeServer = (serverId) => {
+const removeServer = ({serverId}) => {
   return {
     type: REMOVE_SERVER,
     serverId

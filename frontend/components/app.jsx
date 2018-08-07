@@ -6,6 +6,16 @@ import HomeContainer from './home/home_container';
 import ServerShowContainer from './server_show/server_show_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
+const updateAppStateChannel = (newChannel) => {
+  console.log('updateAppStateChannel: ', this.state.channel)
+  this.setState({
+    channel: {
+      channel: newChannel.channel,
+      users: newChannel.users
+    }
+  })
+}
+
 const App = () => (
   <div className="App">
     <Switch>
