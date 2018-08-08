@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Concord
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Concord is a live chat app inspired by Discord. It utilizes React / Redux on it's frontend and Ruby on Rails with PostgreSQL on its backend. 
+Concord was initially developed over a 10 day sprint.
