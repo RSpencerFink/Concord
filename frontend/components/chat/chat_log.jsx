@@ -25,8 +25,8 @@ export default class ChatLog extends React.Component{
 
 
   render(){
-    if (!this.props.messages) {
-      return (<ol className="chat-window"></ol>)
+    if (this.props.messages.length === 0) {
+      return (<ol id="chat-scroll" className="chat-window"></ol>)
     } else {
       const messages = this.props.messages.map((message) => {
         return (<MessageListItem key={ message.id } message={ message } user={ this.props.users[message.user_id] }/>)

@@ -2,6 +2,9 @@ import React from 'react';
 
 export default class MessageListItem extends React.Component{
   render(){
+    if (!this.props.user){
+      return null;
+    }
     return (
       <li className="message-list-item">
         <div className="chat-log-separator"></div>

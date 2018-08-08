@@ -12,12 +12,12 @@ const Auth = ({component: Component, path, loggedIn, exact}) => (
   )}/>
 );
 
-const Protected = function({ component: Component, path, loggedIn, exact }) {
+const Protected = function({ component: Component, path, loggedIn, exact, cableApp }) {
   function toRender(props) {
     if (!loggedIn) {
       return <Redirect to="/login" />;
     } else {
-      return <Component {...props}/>;
+      return <Component {...props} cableApp={cableApp}/>;
     }
   }
   return (

@@ -8,7 +8,7 @@ export default class ServerUserShow extends React.Component {
 
   render(){
     if (!this.props.users) {return null}
-    
+
     const allUsers = this.props.users.map((user) => {
       return <UserListItem key={ user.id } user={ user } />
     })

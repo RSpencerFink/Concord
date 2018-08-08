@@ -21,7 +21,6 @@ const receiveServer = (payload) => {
 };
 
 const receiveNewServer = (payload) => {
-  debugger
   return {
     type: RECEIVE_NEW_SERVER,
     payload

@@ -17,8 +17,9 @@ export default class ServerShow extends React.Component {
       this.props.fetchServer(this.props.match.params.server_id);
       this.props.receiveCurrentChannel(Number(this.props.match.params.server_id), null);
     } else {
+      this.props.fetchServer(this.props.match.params.server_id).then(() => this.props.fetchChannel(Number(this.props.match.params.server_id), Number(this.props.match.params.id)));
       this.props.receiveCurrentChannel(Number(this.props.match.params.server_id), Number(this.props.match.params.id));
-      this.props.fetchChannel(Number(this.props.match.params.server_id), Number(this.props.match.params.id));
+      ;
     };
   };
 
@@ -36,6 +37,8 @@ export default class ServerShow extends React.Component {
   }
 
   render(){
+    console.log(this.props.cableApp);
+
     return (
       <div className="server-show">
         <div className="server-user-info-column">
@@ -46,7 +49,7 @@ export default class ServerShow extends React.Component {
         <div className="channel-info-column">
           <CurrentChannelInfoContainer />
           <div className="chat-and-members-container">
-            <ChannelShowContainer />
+            <ChannelShowContainer cableApp={ this.props.cableApp } />
             <ServerUsersShowContainer />
           </div>
         </div>

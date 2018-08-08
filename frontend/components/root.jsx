@@ -2,18 +2,18 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import App from './app';
-import LoginFormContainer from './login/login_form_container'
+import LoginFormContainer from './login/login_form_container';
 import actionCable from 'actioncable';
 
-//ActionCable
-const CableApp = {}
-CableApp.cable = actionCable.createConsumer(`ws://${window.location.hostname}:3000/cable`)
+// ActionCable
+// const CableApp = {}
+// CableApp.cable = actionCable.createConsumer(`ws://${window.location.hostname}:3000/cable`)
 //
 
-const Root = ({ store }) => (
+const Root = ({ store, cableApp }) => (
   <Provider store={store}>
     <HashRouter>
-      <App cableApp={ CableApp }/>
+      <App cableApp={ cableApp }/>
     </HashRouter>
   </Provider>
 );

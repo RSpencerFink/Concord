@@ -9,6 +9,8 @@ import * as channels from './util/channel_api_util';
 import fetchUsers from './actions/user_actions';
 import fetchServers from './actions/server_actions';
 import fetchChannels from './actions/channel_actions';
+import actionCable from 'actioncable';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -28,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
+  const CableApp = {}
+  CableApp.cable = actionCable.createConsumer(`ws://${window.location.hostname}:3000/cable`)
+
   //TESTING
   window.getState = store.getState;
   window.dispatch = store.dispatch;
@@ -42,5 +47,5 @@ document.addEventListener('DOMContentLoaded', () => {
   //
 
   const root = document.getElementById('root');
-  ReactDOM.render(<Root store={ store }/>, root);
+  ReactDOM.render(<Root store={ store } cableApp={ CableApp } />, root);
 });

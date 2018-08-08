@@ -5,7 +5,8 @@ class ChannelChannel < ApplicationCable::Channel
   end
 
   def received(data)
-    ChannelChannel.broadcast_to(@channel, {channel: @channel, users: @channel.server.members})
+    @channel = Channel.find_by(id: params[:id])
+    ChannelChannel.broadcast_to(@channel, {channel: @channel, message: data})
   end
 
   def unsubscribed
