@@ -10,8 +10,8 @@ class Api::ServerMembershipsController < ApplicationController
   end
 
   def destroy
-    @server_membership = ServerMembership.find_by(server_id: params[:id])
-    if @server_membership
+    @server_membership = current_user.server_memberships.find_by(server_id: params[:id])
+    if @server_membership.user_id
       @server_membership.destroy
       render json: {serverId: @server_membership.server_id}
     else

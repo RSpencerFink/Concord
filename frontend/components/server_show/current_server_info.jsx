@@ -37,6 +37,7 @@ class CurrentServerInfo extends React.Component {
   }
 
   handleClick(e){
+    debugger
     const currentServerOwnerId = this.props.servers[this.props.currentServerId].server_owner_id;
     if (this.props.currentUserId === currentServerOwnerId){
       this.props.deleteServer(this.props.match.params.server_id).then(() => window.location.href = "/");

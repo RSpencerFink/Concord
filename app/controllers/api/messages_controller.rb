@@ -12,7 +12,7 @@ class Api::MessagesController < ApplicationController
   end
 
   def index
-    @messages = Channel.find_by(channel_id: params[:id]).messages
+    @messages = Channel.find_by(channel_id: params[:id]).messages.order(created_at: :desc)
   end
 
   private

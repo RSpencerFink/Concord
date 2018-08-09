@@ -53,6 +53,11 @@
   text-overflow: ellipsis;
 }
 
+.channel-name {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
 .new-channel-button {
   height: 32px;
   background-color: #41454C;
