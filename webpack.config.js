@@ -22,6 +22,7 @@ module.exports = {
     path: path.resolve(__dirname),
     filename: "app/assets/javascripts/bundle.js"
   },
+  plugins: plugins,
   module: {
     rules: [
       {
