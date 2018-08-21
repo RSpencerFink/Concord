@@ -30,24 +30,28 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  const CableApp = {}
-  // Local Host
-  CableApp.cable = actionCable.createConsumer(`ws://${window.location.hostname}:3000/cable`)
-  // Heroku
-  // CableApp.cable = actionCable.createConsumer(`wss://concord-chat.herokuapp.com/cable`)
+  const CableApp = {};
+  let url = ""
+  if (process.env.NODE_ENV === 'production') {
+    url = `wss://concord-chat.herokuapp.com/cable`
+  } else {
+    url = `ws://${window.location.hostname}:3000/cable`
+  }
+
+  CableApp.cable = actionCable.createConsumer(url)
 
 
   //TESTING
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.createUser = users.createUser;
-  window.login = sessions.login;
-  window.logout = sessions.logout;
-  window.fetchUsers = fetchUsers;
-  window.fetchServers = fetchServers;
-  window.fetchChannels = fetchChannels;
-  window.createServer = servers.createServer;
-  window.createChannel = channels.createServer;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.createUser = users.createUser;
+  // window.login = sessions.login;
+  // window.logout = sessions.logout;
+  // window.fetchUsers = fetchUsers;
+  // window.fetchServers = fetchServers;
+  // window.fetchChannels = fetchChannels;
+  // window.createServer = servers.createServer;
+  // window.createChannel = channels.createServer;
   //
 
   const root = document.getElementById('root');
