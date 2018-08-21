@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const CableApp = {};
   let url = ""
+  console.log(process.env.NODE_ENV === 'production');
+  console.log(process.env.NODE_ENV);
   if (process.env.NODE_ENV === 'production') {
     url = `wss://concord-chat.herokuapp.com/cable`
   } else {
