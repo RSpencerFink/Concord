@@ -1,5 +1,13 @@
 const path = require('path');
 
+var webpack = require('webpack');
+
+var prodPlugins = [
+  new webpack.DefinePlugin({
+    "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV)
+  })
+];
+
 module.exports = {
   context: __dirname,
   entry: "./frontend/concord.jsx",
