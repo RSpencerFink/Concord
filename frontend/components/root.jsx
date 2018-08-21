@@ -5,11 +5,6 @@ import App from './app';
 import LoginFormContainer from './login/login_form_container';
 import actionCable from 'actioncable';
 
-// ActionCable
-// const CableApp = {}
-// CableApp.cable = actionCable.createConsumer(`ws://${window.location.hostname}:3000/cable`)
-//
-
 const Root = ({ store, cableApp }) => (
   <Provider store={store}>
     <HashRouter>

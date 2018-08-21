@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ChannelWebSocket extends React.Component{
+export default class ChannelWebSocket extends React.Component {
 
   componentDidUpdate(){
     this.props.cableApp.channel = this.props.cableApp.cable.subscriptions.create({channel: "ChannelChannel", id: this.props.currentChannelId}, {
@@ -12,7 +12,6 @@ export default class ChannelWebSocket extends React.Component{
   }
 
   render(){
-    return (<div></div>)
+    return (<div className="websocket"></div>)
   }
-
 }

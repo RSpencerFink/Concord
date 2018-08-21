@@ -12,16 +12,6 @@ export default class App extends React.Component {
     this.state = {}
   }
 
-  // updateAppStateChannel(newChannel){
-  //     console.log('updateAppStateChannel: ', this.state.channel)
-  //     this.setState({
-  //       channel: {
-  //         channel: newChannel.channel,
-  //         users: newChannel.users
-  //       }
-  //     })
-  //   }
-
   render(){
     return (
       <div className="App">

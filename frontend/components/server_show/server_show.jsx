@@ -37,8 +37,6 @@ export default class ServerShow extends React.Component {
   }
 
   render(){
-    console.log(this.props.cableApp);
-
     return (
       <div className="server-show">
         <div className="server-user-info-column">
