@@ -7,4 +7,3 @@ test:
 production:
   adapter: redis
   url: redis://redistogo:f67886b797c02978ccc942386b5f497f@spinyfin.redistogo.com:9452/
-  channel_prefix: Concord_production
