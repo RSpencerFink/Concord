@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const CableApp = {}
   // Local Host
-  // CableApp.cable = actionCable.createConsumer(`ws://${window.location.hostname}:3000/cable`)
+  CableApp.cable = actionCable.createConsumer(`ws://${window.location.hostname}:3000/cable`)
   // Heroku
-  CableApp.cable = actionCable.createConsumer(`wss://concord-chat.herokuapp.com/cable`)
+  // CableApp.cable = actionCable.createConsumer(`wss://concord-chat.herokuapp.com/cable`)
 
 
   //TESTING
